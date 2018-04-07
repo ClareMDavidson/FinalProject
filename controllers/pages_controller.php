@@ -13,4 +13,7 @@ class PagesController {
       require_once('views/pages/error.php');
     }
     
+    public function write() {
+        require_once('views/pages/blogPostEntry.php');
+    }
 }
