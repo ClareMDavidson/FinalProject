@@ -1,4 +1,5 @@
 <?php
+include '/Applications/XAMPP/htdocs/FinalProject/models/bloggerLogin.php';
 
 class PagesController {
    
@@ -11,6 +12,15 @@ class PagesController {
 
     public function error() {
       require_once('views/pages/error.php');
+    }
+    
+    public function login() {        
+        if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+            require_once('views/pages/login.php');            
+        }
+        else {
+            bloggerLogin::grantAccess();               
+        }
     }
     
 }
