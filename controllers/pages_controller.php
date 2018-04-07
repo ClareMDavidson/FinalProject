@@ -1,5 +1,5 @@
 <?php
-include '/Applications/XAMPP/htdocs/FinalProject/models/bloggerLogin.php';
+include 'models/bloggerLogin.php';
 
 class PagesController {
    
