@@ -1,4 +1,4 @@
-<form action="" method="POST">
+<form action="index.php?controller=blogPost&action=save" method="POST">
     <div class="form-group">
         <label for="Title">Post Title:</label>
         <input type="text" name="Title" autofocus="true" placeholder="Title" required>
