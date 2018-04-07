@@ -21,17 +21,17 @@
             $this->keywords = $keywords;
             $this->date = date('Y-m-d');
             $pdo = DB::getInstance();
-            $stmt = $pdo->prepare("INSERT INTO blogPost(title, content, datePosted, keywords) VALUES (:title, :post, :datePosted, :keywords)");
-            $statement->execute(array(
-                "title" => "$this->title",
-                "post" => "$this->post",
-                "date" => "$this->date",
-                "keywords" => "$this->keywords"
+            $stmt = $pdo->prepare("INSERT INTO blogPost(title, content, datePosted, keywords) VALUES (:title, :post, :date, :keywords)");
+            $stmt->execute(array(
+                "title" => $this->title,
+                "post" => $this->post,
+                "date" => $this->date,
+                "keywords" => $this->keywords
                 ));
             $this->blogPostID = $pdo->lastInsertId();
             return true;
         }catch (Exception $ex) {
-            return false;
+            echo $ex->getMessage().PHP_EOL;
         }
     }
 
