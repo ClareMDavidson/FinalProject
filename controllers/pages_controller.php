@@ -13,6 +13,7 @@ class PagesController {
     public function error() {
       require_once('views/pages/error.php');
     }
+
     
     public function login() {        
         if ($_SERVER['REQUEST_METHOD'] == 'GET') {
@@ -23,4 +24,7 @@ class PagesController {
         }
     }
     
+
+
+
 }
