@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 06, 2018 at 09:45 PM
+-- Generation Time: Apr 07, 2018 at 04:44 PM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.2.0
 
@@ -28,14 +28,20 @@ SET time_zone = "+00:00";
 -- Table structure for table `blogPost`
 --
 
-DROP TABLE IF EXISTS `blogPost`;
 CREATE TABLE `blogPost` (
   `blogPostID` int(11) NOT NULL,
   `title` varchar(100) NOT NULL,
   `content` text NOT NULL,
   `datePosted` date NOT NULL,
-  `tags` varchar(100) DEFAULT NULL
+  `keywords` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `blogPost`
+--
+
+INSERT INTO `blogPost` (`blogPostID`, `title`, `content`, `datePosted`, `keywords`) VALUES
+(1, 'Test', 'Test', '2018-04-07', 'Test');
 
 --
 -- Indexes for dumped tables
@@ -55,7 +61,7 @@ ALTER TABLE `blogPost`
 -- AUTO_INCREMENT for table `blogPost`
 --
 ALTER TABLE `blogPost`
-  MODIFY `blogPostID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `blogPostID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

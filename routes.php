@@ -13,7 +13,7 @@
         default:
         //for all data-driven pages use a specific Controller class
         //we need the model to query the database later in the process
-        require_once("models/{$controller}.php");
+        //require_once("models/{$controller}.php");
         $controllerClassName = $controller . 'Controller';
         $controller = new $controllerClassName();
         break;
@@ -26,6 +26,7 @@
 // Add an entry for each new controller and its actions
 $controllers = array('pages' => ['home', 'error'],
                     'product' => ['readAll','read','create','update','delete'],
+                    'blogPost' => ['write', 'save'],
                     'controllerXXX' => ['actionYYY', 'actionZZZ'],
                     );
 
