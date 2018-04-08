@@ -18,7 +18,7 @@
     padding-left: 50px;
     padding-right: 50px;
     padding-top: 0px;
-        padding-bottom: 0px;
+    padding-bottom: 0px;
     text-align: center;
 }
 .loginDropdown{
@@ -236,4 +236,23 @@ input{
 .hvr-fade:hover, .hvr-fade:focus, .hvr-fade:active {
   background-color: #343F3E;
   color: white;
+}
+
+.keywords {
+    padding-left: 10%;
+    padding-right: 10%;
+    color: grey; 
+    background-color: white;
+    border: black 2px solid
+}
+
+div#postContainer p {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+div#postContainer h2 {
+    margin-bottom: 20px;
 }
