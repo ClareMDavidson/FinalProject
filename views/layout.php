@@ -44,7 +44,7 @@
             <h2 text-decoration="none" color="#F8FFF4">
                 <li class="nav-item"><a class="nav-link" href='?controller=pages&action=contact'>Get in Touch</a></li></h2>
             <h2 text-decoration="none" color="#F8FFF4">
-                <li class="nav-item"><a class="nav-link" href='?controller=pages&action=write'>
+                <li class="nav-item"><a class="nav-link" href='?controller=blogPost&action=write'>
                     <?php          
                    
             if (empty($_SESSION)){
