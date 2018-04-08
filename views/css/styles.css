@@ -1,10 +1,103 @@
-html, body, h1, h2, h3, h4, h5, h6 {
- font-family: 'Pangolin', cursive;
+@import url(https://fonts.googleapis.com/css?family=Amatic+SC|Montserrat|Open+Sans);
+
+#banner{
+        font-family: 'Amatic SC', cursive;
+        color: #2E2C2F;
+        background-color: #D0E3C4;
+        text-align: center;
+       
 }
-.w3-tangerine {
-  font-family: 'Tangerine', serif;
+.navbar{
+        color: #F8FFF4;
+        border-radius: 5px;
+        background: #343F3E;
+        text-align: center;
+        
 }
-.w3-pacifico {
-    font-family: 'Pacifico', cursive;
+.nav-item{
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: center;
+}
+.loginDropdown{
+    text-align:center;
+    color: #F8FFF4;
+}
+a {
+    text-decoration: none; /* no underline */
+}
+a:hover {
+    color: #FFFFFF;
+}
+img {
+    width: 100%;
+    height: auto;
+}
+.dropdown-menu  {
+    color:#F8FFF4;
+    background-color: #343a40;
+    right: 0px !important;
+    left: auto !important;
+    text-decoration: none !important;
+}
+ .container-fluid{
+      width: 105%
+ }
+#postContainer{
+    color:#2E2C2F;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    padding: 5px;
+}
+#sideWidgetBar{
+    background-color: #343a40;
+    color: #F8FFF4;
+    border-radius: 5px;
+}
+h1{
+        font-size: 6vw;
+        font-family: 'Amatic SC', cursive;
+        color: #2E2C2F;   
+}
+h2{
+        font-size: 2vw;
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+}
+h3{
+        font-size: 1.5vw;
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;  
+}
+h4{
+        font-size: 1.5vw;
+        font-family: 'Open Sans', sans-serif;
+        text-align: center;
+}
+h5{
+     font-size: 1vw;
+     font-family: 'Open Sans', sans-serif;
+     
+}
+p{
+        font-size: 1vw;
+        font-family: 'Open Sans', sans-serif;
+        color: #2E2C2F;
+}
+body{
+        font-size: 1vw;
+        font-family: 'Open Sans', sans-serif;
+        color: #2E2C2F;
+        background-color:#D0E3C4;
 }
 
+#footbannner{
+        background-color: #2E2C2F;
+        color: #F8FFF4;
+        font-size: 1vw;
+        font-family: 'Montserrat', sans-serif;
+        border-radius: 1px;
+        background: #73AD21;
+        padding: 1px; 
+    
+}
