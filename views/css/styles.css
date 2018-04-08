@@ -191,8 +191,8 @@ input{
 }
 
 .loginButton {
-    background-color: #343F3E;
-    color: #F8FFF4;
+    background-color: #D0E3C4;
+    color: black;
     align-content: center;
     margin-top: 10px;
 }
@@ -234,6 +234,6 @@ input{
   transition-property: color, background-color;
 }
 .hvr-fade:hover, .hvr-fade:focus, .hvr-fade:active {
-  background-color: #2B8EFF;
+  background-color: #343F3E;
   color: white;
 }
