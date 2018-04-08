@@ -17,6 +17,8 @@
 .nav-item{
     padding-left: 50px;
     padding-right: 50px;
+    padding-top: 0px;
+        padding-bottom: 0px;
     text-align: center;
 }
 .loginDropdown{
@@ -28,6 +30,7 @@ a {
 }
 a:hover {
     color: #FFFFFF;
+    text-decoration: none;
 }
 img {
     width: 100%;
@@ -53,9 +56,13 @@ img {
     background-color: #343a40;
     color: #F8FFF4;
     border-radius: 5px;
-}
+    text-align: center;
+    padding-top: 25px;
+    padding-left: 5px;
+    padding-right: 5px;
+   }
 h1{
-        font-size: 6vw;
+        font-size: 5vw;
         font-family: 'Amatic SC', cursive;
         color: #2E2C2F;   
 }
