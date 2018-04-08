@@ -25,14 +25,14 @@
         }
     }
     
-    public function create($title, $post, $keywords){
+    public function create($title, $content, $keywords){
         try {
             $this->title = $title;
             $this->content = $content;
             $this->keywords = $keywords;
             $this->date = date('Y-m-d');
             $pdo = DB::getInstance();
-            $stmt = $pdo->prepare("INSERT INTO blogPost(title, content, datePosted, keywords) VALUES (:title, :post, :date, :keywords)");
+            $stmt = $pdo->prepare("INSERT INTO blogPost(title, content, datePosted, keywords) VALUES (:title, :content, :date, :keywords)");
             $stmt->execute(array(
                 "title" => $this->title,
                 "content" => $this->content,

@@ -31,7 +31,7 @@ class bloggerLogin {
         }
         
         if (($filteredUsername == bloggerLogin::BLOGUSERNAME)&&($filteredPassword == bloggerLogin::BLOGPASSWORD)) {
-            require_once('views/pages/loggedInPage.php');
+            require_once('views/blogPost/createBlogPost.php');
         } 
         else {
             //would like to change this so that it loads a modal message using JS to say username/password is incorrect.
