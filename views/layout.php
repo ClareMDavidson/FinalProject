@@ -1,20 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<!--link to bootstrap cdn-->
-<link rel="stylesheet" href="https://cdn.rawgit.com/tonystar/bootstrap-float-label/v4.0.0/dist/bootstrap-float-label.min.css"/>
-<!--link to bootstrap floating labels-->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC|Montserrat|Open+Sans">
-<!--direct link to google fonts-->
-<link rel="stylesheet" href="views/css/styles.css">
-<!--link to internal style sheet-->
-<title>Final Project Blog</title>
-  </head>
-  
-  <body>
 
 <!--  this is the title banner-->
 <div class='container-fluid'>
@@ -44,7 +28,7 @@
             <h2 text-decoration="none" color="#F8FFF4">
                 <li class="nav-item"><a class="nav-link" href='?controller=pages&action=contact'>Get in Touch</a></li></h2>
             <h2 text-decoration="none" color="#F8FFF4">
-                <li class="nav-item"><a class="nav-link" href='?controller=pages&action=write'>
+                <li class="nav-item"><a class="nav-link" href='?controller=blogPost&action=write'>
                     <?php          
                    
             if (empty($_SESSION)){
@@ -110,6 +94,3 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-   
-    </body>
-</html>
