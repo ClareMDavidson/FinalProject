@@ -11,10 +11,11 @@
     public function __construct($blogPostID=NULL) {
         if ($blogPostID!=NULL){
             //Gayathri you will need to complete the constructor
-        };
-    }
+      $pdo = Db::getInstance();
+      $stmt = $pdo->prepare
     
-    public function create($title, $post, $keywords){
+} 
+  public function create($title, $post, $keywords){
         try {
             $this->title = $title;
             $this->post = $post;
