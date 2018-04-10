@@ -27,7 +27,7 @@
 $controllers = array('pages' => ['home', 'error', 'login'],
                     'product' => ['readAll','read','create','update','delete'],
                     'blogPost' => ['write', 'save', 'view'],
-                    'image' => ['upload'],
+                    'image' => ['upload', 'save'],
                     'controllerXXX' => ['actionYYY', 'actionZZZ'],
                     );
 
