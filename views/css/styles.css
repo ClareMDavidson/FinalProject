@@ -256,3 +256,11 @@ div#postContainer p {
 div#postContainer h2 {
     margin-bottom: 20px;
 }
+
+div.blogPost img {
+    max-width: 50%;
+    align: left;
+    padding-right: 2%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}

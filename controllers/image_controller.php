@@ -17,6 +17,7 @@ class imageController {
                 throw new Exception('Image upload failed');
             }
             $image = new image($_POST['imageFileName']);
+            require_once('views/blogPost/viewImageCode.php');
         } catch (Exception $ex) {
             echo "File upload error: ".$ex->getMessage();
             require_once('views/blogPost/uploadImage.php');

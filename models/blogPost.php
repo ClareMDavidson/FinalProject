@@ -51,8 +51,10 @@
         }
         
     public function getContent() 
-        { 
-            return $this->content;
+        {
+            $content = $this->content;
+            $content = preg_replace('/\!\((.*?)\)/', '<img src="./views/images/userImages/\1" />', $content);
+            return $content;
         }
     
      public function getKeywords() 
