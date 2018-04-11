@@ -12,7 +12,7 @@
         <input class="form-control" id="Keywords" type="text" placeholder="Keywords" name="Keywords" placeholder="Add keywords, seperated by a comma">
         <label for="Keywords">Keywords</label>
     </div>
-    <button class="loginButton form-control hvr-fade" type="sumbit" name="Submit">Submit</button>
+    <button class="loginButton form-control hvr-fade" type="submit" name="Submit">Submit</button>
 </form>
 <!--<form action="index.php?controller=image&action=upload" method="POST" enctype="multipart/form-data">
     <div class="">

@@ -4,12 +4,12 @@ class blogPostController {
   
     
     public function write() {
-        //if (!empty ($_SESSION['username'])){
+        if (!empty ($_SESSION['username'])){
         require_once('views/blogPost/createBlogPost.php');
-        //}
-        //else {
-          //  require_once('views/pages/login.php');
-        //}
+        }
+        else {
+            require_once('views/pages/login.php');
+        }
     }
     
     public function save() {
