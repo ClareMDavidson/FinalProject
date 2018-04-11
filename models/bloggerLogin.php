@@ -31,6 +31,7 @@ class bloggerLogin {
         }
         
         if (($filteredUsername == bloggerLogin::BLOGUSERNAME)&&($filteredPassword == bloggerLogin::BLOGPASSWORD)) {
+            $_SESSION['username'] = $filteredUsername;
             require_once('views/blogPost/createBlogPost.php');
         } 
         else {
