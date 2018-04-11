@@ -1,6 +1,6 @@
 
 <div class="form-label-group loginStyle">
-    <form action="" method="POST">
+    <form action="index.php?controller=login&action=loginValidation" method="POST">
         <legend align="center"><b>Log in</b></legend>
         <div class="form-label-group">                    
                 <input class="form-control" id="name" type="text" placeholder="Username" name="username" autofocus required />

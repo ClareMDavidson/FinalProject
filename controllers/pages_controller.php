@@ -19,9 +19,7 @@ class PagesController {
         if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             require_once('views/pages/login.php');            
         }
-        else {
-            bloggerLogin::grantAccess();               
-        }
+        
     }
     
 

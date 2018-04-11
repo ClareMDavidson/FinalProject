@@ -27,10 +27,11 @@ class bloggerLogin {
 
         if (isset($_POST['username'])&&(isset($_POST['password']))) {
             $filteredUsername = filter_input(INPUT_POST,'username', FILTER_SANITIZE_SPECIAL_CHARS);
-            $filteredPassword = filter_input(INPUT_POST,'password', FILTER_SANITIZE_SPECIAL_CHARS);
+            $filteredPassword = filter_input(INPUT_POST,'password', FILTER_SANITIZE_SPECIAL_CHARS); 
         }
-        
+
         if (($filteredUsername == bloggerLogin::BLOGUSERNAME)&&($filteredPassword == bloggerLogin::BLOGPASSWORD)) {
+            $_SESSION['username'] = $filteredUsername;
             require_once('views/blogPost/createBlogPost.php');
         } 
         else {
