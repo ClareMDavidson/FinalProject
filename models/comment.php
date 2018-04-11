@@ -1,7 +1,7 @@
 <?php
 class Comment {
+    private $blogPostID;
     private $commentPostID;
-    private $commentID;
     private $username;
     private $userEmail;
     private $content;
@@ -13,13 +13,13 @@ class Comment {
         try {
             if ($commentPostID!=NULL){
                 $pdo = DB::getInstance();
-                $stmt = $pdo->prepare("SELECT * FROM comment WHERE commentPostID = :blogPostID");
-                $stmt->execute (["commentPostID"=>$commentPostID]);
+                $stmt = $pdo->prepare("SELECT * FROM comment WHERE blogPostID = :blogPostID");
+                $stmt->execute (["blogPostID"=>$blogPostID]);
                 $results = $stmt->fetch();
                 $this->username = $results['username'];
                 $this->userEmail = $results['userEmail'];
+                $this->blogPostID = $results['blogPostID'];
                 $this->commentPostID = $results['commentPostID'];
-                $this->commentID = $results['commentID'];
                 $this->content = $results['content'];
                 $this->timeCommented = $results['timeCommented'];
                 $this->dateCommented = $results['dateCommented'];
@@ -30,10 +30,11 @@ class Comment {
         }
     }
     
-        public function create($user, $userEmail, $content){
+        public function create($blogPostID, $username, $userEmail, $content){
+            require_once('models/blogPost.php');
         try {
-            $this->commentPostID = $commentPostID;
-            $this->user = $user;
+            $this->blogPostID = $blogPostID;
+            $this->username = $username;
             $this->userEmail = $userEmail;
             $this->content = $content;
             $this->dateCommented = date('Y-m-d');
@@ -41,31 +42,32 @@ class Comment {
             $pdo = DB::getInstance();
             $stmt = $pdo->prepare("INSERT INTO comment(username, userEmail, content) VALUES (:username, :userEmail, :content)");
             $stmt->execute(array(
-                "commentPostID" => $this->commentPostID, "username" => $this->username,"userEmail" => $this->userEmail, 
+                "blogPostID" => $this->blogPostID, "username" => $this->username,"userEmail" => $this->userEmail, 
                 "content" => $this->content, "dateCommented" => $this->dateCommented, "timeCommented" => $this->timeCommented
                 ));
-            $this->commentID = $pdo->lastInsertId(); 
+            $blogPost = new BlogPost($blogPostID);
+//            $this->commentPostID = $pdo->lastInsertId(); 
             return true;
         }catch (Exception $ex) {
             echo $ex->getMessage().PHP_EOL;
         }
     }
-    public function getCommentPostID() 
-        { 
-            return $this->commentPostID;
-        }
-    public function getCommentID() 
-        { 
-            return $this->commentID;
-        }
+//    public function getBlogPostID() 
+//        { 
+//            return $this->blogPostID;
+//        }
+//    public function getCommentPostID() 
+//        { 
+//            return $this->commentPostID;
+//        }
     public function getUsername() 
         { 
             return $this->username;
         }
-    public function getUserEmail() 
-        { 
-            return $this->userEmail;
-        }    
+//    public function getUserEmail() 
+//        { 
+//            return $this->userEmail;
+//        }    
     public function getContent() 
         { 
             return $this->content;
@@ -92,10 +94,10 @@ class Comment {
             $pdo = DB::getInstance();
             $stmt = $pdo->prepare("INSERT INTO comment(commentScore)) VALUE (:newscore)");
             $stmt->execute(array(
-                "commentPostID" => $this->commentPostID, "username" => $this->username,"userEmail" => $this->userEmail, 
+                "commentPostID" => $this->blogPostID, "username" => $this->username,"userEmail" => $this->userEmail, 
                 "content" => $this->content, "dateCommented" => $this->dateCommented, "timeCommented" => $this->timeCommented
                 ));
-            $this->commentID = $pdo->lastInsertId(); 
+//            $this->commentPostID = $pdo->lastInsertId(); 
             return true;
         }catch (Exception $ex) {
             echo $ex->getMessage().PHP_EOL;
