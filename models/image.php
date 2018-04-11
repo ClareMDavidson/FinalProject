@@ -4,7 +4,7 @@ class Image {
     private $imageName;
     
     public function __construct($imageName){
-        $this->imageName    = $imageName;
+        $this->imageName = $imageName;
     }
     
     
@@ -12,22 +12,22 @@ class Image {
 //    }
 
     const AllowedTypes = ['image/jpg', 'image/jpeg', 'image/png', 'image/gif'];
-    const InputKey = 'myfile';
     
-    public function uploadFile($imageName){
-        if (empty($_FILES[self::InputKey])) {
+    public function uploadFile($inputkey){
+        if (empty($_FILES[$inputkey])) {
             throw new Exception("File Missing!");
         }
-        if ($_FILES[self::InputKey]['error'] > 0) {
-            throw new Exception("Handle the error! " . $_FILES[InputKey]['error']);
+        if ($_FILES[$inputkey]['error'] > 0) {
+            throw new Exception("Handle the error! " . $_FILES[$inputkey]['error']);
         }
-        if (!in_array($_FILES[self::InputKey]['type'], self::AllowedTypes)) {
-            throw new Exception("Handle File Type Not Allowed: " . $_FILES[self::InputKey]['type']);
+        if (!in_array($_FILES[$inputkey]['type'], self::AllowedTypes)) {
+            throw new Exception("Handle File Type Not Allowed: " . $_FILES[$inputkey]['type']);
         }
-
-        $tempFile = $_FILES[self::InputKey]['tmp_name'];
+        $_POST['imageFileName'] = $_FILES[$inputkey]['name'];
+        filter_input(INPUT_POST,'imageFileName', FILTER_SANITIZE_SPECIAL_CHARS);
+        $tempFile = $_FILES[$inputkey]['tmp_name'];
         $path = "./views/images/userImages/";
-        $destinationFile = $path . $imageName;
+        $destinationFile = $path . $_POST['imageFileName'];
 
         if (!move_uploaded_file($tempFile, $destinationFile)) {
             throw new Exception("Handle Error");
@@ -37,31 +37,7 @@ class Image {
         if (file_exists($tempFile)) {
             unlink($tempFile); 
         }
-
-        return true;
+        return new image($_POST['imageFileName']);
     }
     
 }
-
-//        const InputKey = 'myfile';
-//        const AllowedTypes = ['image/jpg', 'image/jpeg', 'image/png', 'image/gif'];            
-//        if (empty($_FILES[InputKey])) {
-//                echo "Please attach a file to upload.";
-//            }
-//            if ($_FILES[InputKey]['error'] > 0) {
-//                return call('pages', 'error');
-//            }
-//            if (!in_array($_FILES[InputKey] ['type'], AllowedTypes)) {
-//                echo "Please upload .jpg, .jpeg, .png or .gif files only.";
-//            }
-//            
-//            $tmpFile = $_FILES[InputKey]['tmp_name'];
-//            $dstFile = 'images/userImages/'.$_FILES[InputKey]['name'];
-//            
-//            if (!move_uploaded_file($tmpFile, $dstFile)){
-//                    die("Failed to move file.");
-//                }
-//            
-//           if (file_exists($tmpFile)) {
-//               unlink($tmp);
-//           }

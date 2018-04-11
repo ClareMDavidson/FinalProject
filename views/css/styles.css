@@ -258,8 +258,7 @@ div#postContainer h2 {
 }
 
 div.blogPost img {
-    max-width: 50%;
-    align: left;
+    max-width: 40%;
     padding-right: 2%;
     padding-top: 2%;
     padding-bottom: 2%;
