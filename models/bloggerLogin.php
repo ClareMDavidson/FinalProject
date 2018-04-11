@@ -33,12 +33,9 @@ class bloggerLogin {
         if (($filteredUsername == bloggerLogin::BLOGUSERNAME)&&($filteredPassword == bloggerLogin::BLOGPASSWORD)) {
             $_SESSION['username'] = $filteredUsername;
             require_once('views/blogPost/createBlogPost.php');
-            echo '<script>window.location="/Applications/XAMPP/htdocs/FinalProject/views/blogPost/createBlogPost.php";</script>';
-            
-
         } 
         else {
-            //would like to change this so that it loads a modal message using JS to say username/password is incorrect.
+            //would like to change this so that it loads a modal message using JS to say username/password is incorrect
             
             require_once ('views/pages/login.php');
             echo '<script>alert("Invalid Username and/or Password. Please try again.")</script>';
