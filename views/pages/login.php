@@ -17,3 +17,4 @@
     </form>
 </div>
 
+<a href="../blogPost/createBlogPost.php"></a>
