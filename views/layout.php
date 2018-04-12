@@ -48,7 +48,15 @@
     <img style="height: 45px; width: 31px;" src="views/images/lockIcon.png">
     <span class="caret"></span></button>
   <ul class="dropdown-menu dropdown-menu-right">
-      <h3 text-decoration="none" color="#F8FFF4"><li class="loginDropdown"><a class="loginDropdown" href="?controller=pages&action=login">Blog Owner Login</a></li></h3>
+  <?php      
+      if (empty($_SESSION['username'])) {       
+        echo '<h3 text-decoration="none" color="#F8FFF4"><li class="loginDropdown"><a class="loginDropdown" href="?controller=pages&action=login">Blog Owner Login</a></li></h3>';
+      }
+      else if (!empty ($_SESSION['username'])) {
+          echo '<h3 text-decoration="none" color="#F8FFF4"><li class="loginDropdown"><a class="loginDropdown" href="?controller=pages&action=login">Blog Owner Log out</a></li></h3>';
+      }
+    ?>
+      
 
   </ul>
     </ul></div>

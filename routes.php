@@ -28,6 +28,7 @@ $controllers = array('pages' => ['home', 'error', 'login'],
                     'product' => ['readAll','read','create','update','delete'],
                     'blogPost' => ['write', 'save', 'view'],
                     'comment'=>['writeComment', 'saveComment', 'viewComment'],
+                    'image' => ['upload', 'save'],
                     'controllerXXX' => ['actionYYY', 'actionZZZ'],
                     );
 

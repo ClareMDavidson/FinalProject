@@ -27,7 +27,3 @@
     </div>
         <button class="loginButton form-control hvr-fade" type="submit" name="Submit">Submit</button>
 </form>
-
-<!--comment section-->
-<!--<a href="index.php?controller=comment&action=writeComment"> 
-    Leave a Comment </a>-->
