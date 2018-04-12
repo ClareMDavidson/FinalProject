@@ -11,10 +11,10 @@ class Comment {
     
     public function __construct($commentPostID=NULL) {
         try {
-            if ($commentPostID!=NULL){
+            if ($commentPostID!=NULL){ 
                 $pdo = DB::getInstance();
-                $stmt = $pdo->prepare("SELECT * FROM comment WHERE blogPostID = :blogPostID");
-                $stmt->execute (["blogPostID"=>$blogPostID]);
+                $stmt = $pdo->prepare("SELECT * FROM comment WHERE commentPostID = :commentPostID");
+                $stmt->execute (["commentPostID"=>$commentPostID]);
                 $results = $stmt->fetch();
                 $this->username = $results['username'];
                 $this->userEmail = $results['userEmail'];
@@ -40,14 +40,18 @@ class Comment {
             $this->dateCommented = date('Y-m-d');
             $this->timeCommented = date('h:i');
             $pdo = DB::getInstance();
-            $stmt = $pdo->prepare("INSERT INTO comment(username, userEmail, content) VALUES (:username, :userEmail, :content)");
+            $stmt = $pdo->prepare("INSERT INTO comment(blogPostID, username, userEmail, content, dateCommented, timeCommented) VALUES (:blogPostID, :username, :userEmail, :content, :dateCommented, :timeCommented)");
             $stmt->execute(array(
-                "blogPostID" => $this->blogPostID, "username" => $this->username,"userEmail" => $this->userEmail, 
-                "content" => $this->content, "dateCommented" => $this->dateCommented, "timeCommented" => $this->timeCommented
+                "blogPostID" => $this->blogPostID,
+                "username" => $this->username,
+                "userEmail" => $this->userEmail, 
+                "content" => $this->content, 
+                "dateCommented" => $this->dateCommented,
+                "timeCommented" => $this->timeCommented
                 ));
-            $blogPost = new BlogPost($blogPostID);
+            //$blogPost = new BlogPost($blogPostID);
 //            $this->commentPostID = $pdo->lastInsertId(); 
-            return true;
+            return $blogPostID;
         }catch (Exception $ex) {
             echo $ex->getMessage().PHP_EOL;
         }
