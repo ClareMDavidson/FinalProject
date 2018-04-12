@@ -29,6 +29,7 @@ class blogPostController {
     
     public function view() {
         require_once('models/blogPost.php');
+        require_once('models/comment.php');
         filter_input(INPUT_GET, 'blogPostID', FILTER_SANITIZE_NUMBER_INT);
         $blogPost = new blogPost($_GET['blogPostID']);
         require_once('views/blogPost/viewBlogPost.php');

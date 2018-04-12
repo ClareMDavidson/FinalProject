@@ -5,6 +5,7 @@
     private $content;
     private $date;
     private $keywords;
+    private $comments=array();
 
     public function __construct($blogPostID=NULL) {
         try {
@@ -19,6 +20,15 @@
                 $this->content = $results['content'];
                 $this->date = $results['datePosted'];
                 $this->keywords = $results ['keywords'];
+                
+                $stmt = $pdo->prepare("SELECT commentPostID from comment
+                    WHERE blogPostID = :blogPostID
+                    ORDER BY commentPostID DESC;");
+                $stmt->execute (["blogPostID"=>$blogPostID]);
+                while ($results = $stmt->fetch()){
+                   $comment = new Comment($results ['commentPostID']);
+                   array_push($this->comments, $comment);
+                }
             }
         }catch (Exception $ex) {
             echo $ex->getMessage().PHP_EOL;
@@ -65,4 +75,12 @@
         { 
             return $this->date;
         }
+     public function getID() 
+        { 
+            return $this->blogPostID;
+        }
+    public function getComments() 
+        { 
+            return $this->comments;
+        }  
   }
