@@ -1,11 +1,11 @@
-<div class="blogPost"></div>
-<h2><?php echo $blogPost->getTitle();?></h2>
-<p><b><?php echo "Posted on: ". $blogPost->getDate(); ?></b></p>
-<p><?php echo $blogPost->getContent(); ?></p>
-<p id="keywords"><?php echo "Keywords: ".$blogPost->getKeywords(); ?></b></p>
-<div class="sharethis-inline-share-buttons" id="socialmedia"></div>
-<hr>
+<div class="blogPost">
+    <h2><?php echo $blogPost->getTitle();?></h2>
+    <p><b><?php echo "Posted on: ". $blogPost->getDate(); ?></b></p>
+    <p><?php echo $blogPost->getContent(); ?></p>
+    <p id="keywords"><?php echo "Keywords: ".$blogPost->getKeywords(); ?></b></p>
 </div>
+<div class="sharethis-inline-share-buttons" id="socialmedia"></div>
+<br />
 <?php
     foreach($blogPost->getComments() as $comment) {?>
         <h3><?php echo $comment->getUsername(); ?></h3>
