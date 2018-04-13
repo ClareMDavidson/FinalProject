@@ -263,3 +263,19 @@ div.blogPost img {
     padding-top: 2%;
     padding-bottom: 2%;
 }
+
+#commentForm {
+    padding: 20px;
+    align-content: center;
+}
+
+#style1 {
+  border:none;
+  height: 20px;
+ 	width: 90%;
+	height: 50px;
+	margin-top: 0;
+	border-bottom: 1px solid #1f1209;
+	box-shadow: 0 20px 20px -20px #333;
+
+}
