@@ -258,8 +258,18 @@ div#postContainer h2 {
 }
 
 div.blogPost img {
-    max-width: 40%;
+    max-width: 30%;
     padding-right: 2%;
     padding-top: 2%;
     padding-bottom: 2%;
+}
+
+p#keywords {
+    background-color: #D0E3C4;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5%;
+    padding-right: 5%;
 }
