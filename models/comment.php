@@ -31,14 +31,15 @@ class Comment {
     }
     
         public function create($blogPostID, $username, $userEmail, $content){
+            date_default_timezone_set('Europe/London');
             require_once('models/blogPost.php');
         try {
             $this->blogPostID = $blogPostID;
             $this->username = $username;
             $this->userEmail = $userEmail;
             $this->content = $content;
-            $this->dateCommented = date('Y-m-d');
-            $this->timeCommented = date('h:i');
+            $this->dateCommented = date("Y-m-d");
+            $this->timeCommented = date("H:i");
             $pdo = DB::getInstance();
             $stmt = $pdo->prepare("INSERT INTO comment(blogPostID, username, userEmail, content, dateCommented, timeCommented) VALUES (:blogPostID, :username, :userEmail, :content, :dateCommented, :timeCommented)");
             $stmt->execute(array(
