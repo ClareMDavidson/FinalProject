@@ -10,6 +10,14 @@ class PagesController {
       $multiPost = new MultiPostDisplay();
       require_once('views/pages/home.php');
     }
+    
+    public function archive() {
+        require_once('models/archivePostDisplay.php');
+        require_once('models/blogPost.php');
+        require_once('models/comment.php');
+        $archivePost = new archivePostDisplay();
+        require_once('views/pages/archive.php');
+    }
 
     public function error() {
       require_once('views/pages/error.php');
