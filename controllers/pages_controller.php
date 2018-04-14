@@ -5,6 +5,8 @@ class PagesController {
    
     public function home() {
       require_once('models/multiPostDisplay.php');
+      require_once('models/blogPost.php');
+      require_once('models/comment.php');
       $multiPost = new MultiPostDisplay();
       require_once('views/pages/home.php');
     }
