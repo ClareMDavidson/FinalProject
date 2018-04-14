@@ -264,6 +264,7 @@ div.blogPost img {
     padding-bottom: 2%;
 }
 
+
 #commentForm {
     padding: 20px;
     align-content: center;
@@ -278,4 +279,12 @@ div.blogPost img {
 	border-bottom: 1px solid #1f1209;
 	box-shadow: 0 20px 20px -20px #333;
 
+}
+
+div.blogPost p#keywords {
+    background-color: #D0E3C4;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }

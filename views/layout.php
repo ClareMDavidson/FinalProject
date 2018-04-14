@@ -53,7 +53,7 @@
         echo '<h3 text-decoration="none" color="#F8FFF4"><li class="loginDropdown"><a class="loginDropdown" href="?controller=pages&action=login">Blog Owner Login</a></li></h3>';
       }
       else if (!empty ($_SESSION['username'])) {
-          echo '<h3 text-decoration="none" color="#F8FFF4"><li class="loginDropdown"><a class="loginDropdown" href="?controller=pages&action=login">Blog Owner Log out</a></li></h3>';
+          echo '<h3 text-decoration="none" color="#F8FFF4"><li class="loginDropdown"><a class="loginDropdown" href="?controller=pages&action=logout">Blog Owner Log out</a></li></h3>';
       }
     ?>
       

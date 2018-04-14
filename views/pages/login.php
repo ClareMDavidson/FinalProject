@@ -16,4 +16,3 @@
         <button class="loginButton form-control hvr-grow hvr-fade" type="submit">Log in</button><br>  
     </form>
 </div>
-

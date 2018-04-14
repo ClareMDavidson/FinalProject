@@ -1,21 +1,21 @@
-<h2><?php echo $blogPost->getTitle();?></h2>
-<p><?php echo $blogPost->getContent(); ?></p>
-<p><b><?php echo "Posted on: ". $blogPost->getDate(); ?></b></p>
-<p><?php echo "Keywords: ".$blogPost->getKeywords(); ?></p>
-
+<div class="blogPost">
+    <h2><?php echo $blogPost->getTitle();?></h2>
+    <p><b><?php echo "Posted on: ". $blogPost->getDate(); ?></b></p>
+    <p><?php echo $blogPost->getContent(); ?></p>
+    <p id="keywords"><?php echo "Keywords: ".$blogPost->getKeywords(); ?></b></p>
+</div>
+<div class="sharethis-inline-share-buttons" id="socialmedia"></div>
+<br />
 <hr id="style1">
 <p><b>Comments:</b></p> 
-    <?php
+<?php
     foreach($blogPost->getComments() as $comment) {?>
 <h5 align="left"><b><?php echo $comment->getUsername(); ?></b></h5>
         <p><?php echo $comment->getContent(); ?></p><br>
         <h5><?php echo $comment->getTimeCommented() . " | " . $comment->getDateCommented()?></h5>    
         <hr>   <?php
     } ?>
-
-
         <hr> 
-
 <div class="col-sm-8" id="commentForm" style="height:auto; margin: 0 auto; align:center;">
 <form action="index.php?controller=comment&action=saveComment" method="POST">
     <h4>Leave a Comment</h4><br>
