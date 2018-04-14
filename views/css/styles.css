@@ -288,3 +288,9 @@ div.blogPost img {
     padding-top: 5px;
     padding-bottom: 5px;
 }*/
+
+button.markup{
+    color: black;
+    background-color: #d1e3c5;
+    margin-bottom: 5px;
+}

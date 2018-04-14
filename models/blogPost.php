@@ -65,7 +65,7 @@
             $content = $this->content;
             $content = preg_replace('/\!\((.*?)\)/', '<img src="./views/images/userImages/\1" />', $content);
             $content = preg_replace('/\*\*(.*?)\*\*/', '<b>\1</b>', $content);
-            $content = preg_replace('/\_(.*?)\_/', '<i>\1</i>', $content);
+            $content = preg_replace('/\>\>(.*?)\>\>/', '<center>\1</center>', $content);
             return $content;
         }
     
