@@ -7,7 +7,7 @@ class imageController {
     
     public function save(){
         try{
-            if(!isset($_POST['Submit'])){
+            if(!$_SERVER['REQUEST_METHOD'] === 'POST'){
                 throw new Exception('Not a form submission');
             }
 
@@ -18,6 +18,7 @@ class imageController {
                 throw new Exception('Image upload failed');
             }
             require_once('views/blogPost/viewImageCode.php');
+            echo "Congratulations! Your image has been successfully uploaded. Please take a note of the following code and post it into your blog post, where you would like your image to appear:". $_POST['imageFileName'];
         } catch (Exception $ex) {
             echo "File upload error: ".$ex->getMessage();
             require_once('views/blogPost/uploadImage.php');
