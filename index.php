@@ -12,6 +12,7 @@
         <!--direct link to google fonts-->
         <link rel="stylesheet" href="views/css/styles.css">
         <!--link to internal style sheet-->
+        <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5ad09e3883e6290013a1c2d5&product=inline-share-buttons"></script>
         <title>Final Project Blog</title>
     </head>
     <body>
