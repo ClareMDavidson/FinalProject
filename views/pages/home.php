@@ -1,14 +1,10 @@
-<?php
 
-$pdo = DB::getInstance();
-$stmt = $pdo->prepare("SELECT * FROM blogPost ORDER BY datePosted DESC LIMIT 3");
-$stmt->execute();
-$rows = $stmt->fetchAll();
-
-    foreach($rows as $row) {?>
-        <h2><?php echo $row['title']; ?></h2>
-        <p><?php echo substr($row['content'], 0, 300).'...<a href="http://localhost/FinalProject/index.php?controller=blogPost&action=view&blogPostID='.$row['blogPostID'].'">CLICK TO READ MORE</a>'; ?></p>
-        <p><b><?php echo "Posted on: ".$row['datePosted']; ?></b></p>
-        <p><?php echo "Keywords: ".$row['keywords']; ?></p><?php
-    } 
- 
+<div class="blogPost">
+    <?php
+    foreach($multiPost->getMultiPost() as $posts) {?>
+        <h2><?php echo $posts->getTitle(); ?></h2>
+        <p><?php echo substr($posts->getContent(), 0, 300).'...<a href="http://localhost/FinalProject/index.php?controller=blogPost&action=view&blogPostID='.$posts->getID().'">CLICK TO READ MORE</a>'; ?></p>
+        <p><b><?php echo "Posted on: ".$posts->getDate(); ?></b></p>
+        <p><?php echo "Keywords: ".$posts->getKeywords(); ?></p><?php
+    }?> 
+</div>
