@@ -23,8 +23,15 @@
                 <li class="nav-item"><a class="nav-link" href='?controller=pages&action=about'>About</a></li></h2>
             <h2 text-decoration="none" color="#F8FFF4">
                 <li class="nav-item"><a class="nav-link" href='#'>Recent Posts</a></li></h2>
-            <h2 text-decoration="none" color="#F8FFF4">
-                <li class="nav-item"><a class="nav-link" href='#'>Archive</a></li></h2>
+                <div class="dropdown" >
+                <h2 text-decoration="none" color="#F8FFF4">
+                    <li class="nav-item"><a class="nav-link" href="#">Archive</a></li>
+                </h2>
+                    <div class="dropdown-content">
+                        <a href="#">January</a>
+                        <a href="#">February</a>
+                    </div>
+            </div>
             <h2 text-decoration="none" color="#F8FFF4">
                 <li class="nav-item"><a class="nav-link" href='?controller=pages&action=contact'>Get in Touch</a></li></h2>
             <h2 text-decoration="none" color="#F8FFF4">
