@@ -4,6 +4,8 @@ include 'models/bloggerLogin.php';
 class PagesController {
    
     public function home() {
+      require_once('models/multiPostDisplay.php');
+      $multiPost = new MultiPostDisplay();
       require_once('views/pages/home.php');
     }
 
