@@ -24,7 +24,7 @@
         <input class="form-control" type="hidden" name="MAX_FILE_SIZE" value="10000000" />
         <input type="file" id="file-select" name="photos[]">
     </div>
-    <button type="submit" name="Submit" id="upload-button" class="loginButtom form-control hvr-fade">Upload</button>
+    <button type="submit" name="Submit" id="upload-button" class="loginButton form-control hvr-fade">Upload</button>
 </form>
 <p id="imageCode"></p>
 
