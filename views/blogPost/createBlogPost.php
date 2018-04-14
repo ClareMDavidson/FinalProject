@@ -6,6 +6,7 @@
     </div>
     <div class="form-label-group">
         <label for="Content">Blog Post</label><br /><br />
+        <p><b>Bold text:</b> **your text** | <i>Italic text:</i> _your text_</p>
         <textarea name="Content" id="Content" placeholder="Write your blog post here" class="form-control" required /></textarea>
     </div>
     <div class="form-label-group">
