@@ -73,9 +73,10 @@
         
 <div class="col-sm-2">
     <div id="sideWidgetBar">
-    <img style="height: 50px; width: 50px;" src="views/images/twitterIcon.png" alt="placeholder social media icon" hspace="5"/>
-    <img style="height: 50px; width: 50px;" src="views/images/youtubeIcon.png" alt="placeholder social media icon" hspace="5"/>
-    <img style="height: 50px; width: 50px;" src="views/images/instagramIcon.png" alt="placeholder social media icon" hspace="5"/>
+    <img style="height: 50px; width: 50px;" src="views/images/twitterIcon.png" alt="placeholder social media icon" hspace="5"/><p class="tname"><a href="https://twitter.com/skyGITwomen/">@skyGITwomen</a></p>  <div class="tweet-container"><div class="tweet">
+    <img style="height: 50px; width: 50px;" src="views/images/youtubeIcon.png" alt="placeholder social media icon" hspace="5"/><p class="tname"><a href="https://www.youtube.com/channel/UC_cjkT0TLAhi2ZoBShBs6qw/featured?view_as=subscriber">@skyGITwomen</a></p>  <div class="Youtube-container"><div class="Youtube">
+    <img style="height: 50px; width: 50px;" src="views/images/instagramIcon.png" alt="placeholder social media icon" hspace="5"/><p class="tname"><a href="https://www.instagram.com/skygitwomen/">@skyGITwomen</a></p>  <div class="Instagram-container"><div class="instagram">
+    <img style="height: 50px; width: 50px;" src="views/images/Facebook.png.png" alt="placeholder social media icon" hspace="5"/><p class="tname"><a href="https://www.facebook.com/skygitwomen.sky.7/">@skyGITwomen</a></p>  <div class="Facebook-container"><div class="Facebook">
     <br><br><br>
     <h3>Twitter feed might go here</h3>
     <br><br><br>
