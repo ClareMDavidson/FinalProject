@@ -5,7 +5,12 @@
         <label for="Title">Post Title:</label>
     </div>
     <div class="form-label-group">
-        <label for="Content">Blog Post</label><br /><br />
+        <label for="Content"><h4>Blog Post:</h4></label><br /><br />
+        <div><center>
+            <button type="button" id="bold" class="markup" onclick="formatting('**')" name="Bold">Bold</button>
+            <button type="button" id="italic" class="markup" onclick="formatting('_')" name="Italic">Italic</button>
+            <button type="button" id="bold" class="markup" onclick="formatting('>>')" name="Centre">Align Centre</button>
+            </center></div>
         <textarea name="Content" id="Content" placeholder="Write your blog post here" class="form-control" required /></textarea>
     </div>
     <div class="form-label-group">
@@ -20,7 +25,7 @@
         <input class="form-control" type="hidden" name="MAX_FILE_SIZE" value="10000000" />
         <input type="file" id="file-select" name="photos[]">
     </div>
-    <button type="submit" name="Submit" id="upload-button" class="loginButtom form-control hvr-fade">Upload</button>
+    <button type="submit" name="Submit" id="upload-button" class="loginButton form-control hvr-fade">Upload</button>
 </form>
 <p id="imageCode"></p>
 
@@ -59,4 +64,26 @@
         };
         xhr.send(formData);
     }
+    
+    function formatting(markup) // javascript
+{
+    // obtain the object reference for the <textarea>
+    var txtarea = document.getElementById("Content");
+    // obtain the index of the first selected character
+    var start = txtarea.selectionStart;
+    // obtain the index of the last selected character
+    var finish = txtarea.selectionEnd;
+    // obtain the selected text
+    var selection = txtarea.value.substring(start, finish);
+    // do something with the selected content
+    var formatted = markup+selection+markup;
+    // put the markup langauge around the selected content
+    var before = txtarea.value.substring(0, start);
+    // obtain the start position that the string needs to go back into
+    var after = txtarea.value.substring(finish, txtarea.value.length);
+    // obtain the end position that the string needs to go back into
+    txtarea.value = before+formatted+after;
+    // put all three parts back together again inside the text area
+    
+}
 </script>
