@@ -39,18 +39,9 @@
                         <a href="?controller=pages&action=archive&month=08" id="01">August 2017</a>
                         <a href="?controller=pages&action=archive&month=07" id="01">July 2017</a>
                         <a href="?controller=pages&action=archive&month=06" id="01">June 2017</a>
-                        <a href="?controller=pages&action=archive&month=05" id="01">May 2017</a>
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
+                        <a href="?controller=pages&action=archive&month=05" id="01">May 2017</a>   
                     </div>
-            </div>
+                </div>
             <h2 text-decoration="none" color="#F8FFF4">
                 <li class="nav-item"><a class="nav-link" href='?controller=pages&action=contact'>Get in Touch</a></li></h2>
             <h2 text-decoration="none" color="#F8FFF4">
