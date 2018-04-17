@@ -73,10 +73,10 @@
         
 <div class="col-sm-2">
     <div id="sideWidgetBar">
-    <a href="https://twitter.com/skyGITwomen/"><img style="height: 50px; width: 50px;" src="views/images/twitterIcon.png" alt="placeholder social media icon" hspace="5"/><<br><br>
-    <a href="https://www.youtube.com/channel/UC_cjkT0TLAhi2ZoBShBs6qw/featured?view_as=subscriber/"><img style="height: 50px; width: 50px;" src="views/images/youtubeIcon.png" alt="placeholder social media icon" hspace="5"/><br><br> 
-    <a href="https://www.instagram.com/skygitwomen/"><img style="height: 50px; width: 50px;" src="views/images/instagramIcon.png" alt="placeholder social media icon" hspace="5"/><br><br>
-    <a href="https://www.facebook.com/skygitwomen.sky.7/"><img style="height: 50px; width: 50px;" src="views/images/Facebook.png.png" alt="placeholder social media icon" hspace="5"/><br><br>
+    <a href="https://twitter.com/skyGITwomen/"><img style="height: 50px; width: 50px;" src="views/images/twitterIcon.png" alt="placeholder social media icon" hspace="5"/>
+    <a href="https://www.youtube.com/channel/UC_cjkT0TLAhi2ZoBShBs6qw/featured?view_as=subscriber/"><img style="height: 50px; width: 50px;" src="views/images/youtubeIcon.png" alt="placeholder social media icon" hspace="5"/> 
+    <a href="https://www.instagram.com/skygitwomen/"><img style="height: 50px; width: 50px;" src="views/images/instagramIcon.png" alt="placeholder social media icon" hspace="5"/>
+    <a href="https://www.facebook.com/skygitwomen.sky.7/"><img style="height: 50px; width: 50px;" src="views/images/Facebook.png.png" alt="placeholder social media icon" hspace="5"/>
     <br><br><br>
     
      
