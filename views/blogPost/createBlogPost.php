@@ -8,8 +8,8 @@
         <label for="Content"><h4>Blog Post:</h4></label><br /><br />
         <div><center>
             <button type="button" id="bold" class="markup" onclick="formatting('**')" name="Bold">Bold</button>
-            <button type="button" id="italic" class="markup" onclick="formatting('_')" name="Italic">Italic</button>
-            <button type="button" id="bold" class="markup" onclick="formatting('>>')" name="Centre">Align Centre</button>
+            <button type="button" id="italic" class="markup" onclick="formatting('*')" name="Italic">Italic</button>
+            <button type="button" id="bold" class="markup" onclick="formatting('>')" name="Centre">Align Centre</button>
             <button type="button" id="bold" class="markup" onclick="formatting('link')" name="Link">Link</button>
             </center></div>
         <textarea name="Content" id="Content" placeholder="Write your blog post here" class="form-control" required /></textarea>
