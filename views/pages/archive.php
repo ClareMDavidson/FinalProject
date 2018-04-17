@@ -1,4 +1,5 @@
-
+<div class="archiveTitle"><h2 style="padding-top: 4px"><b><?php echo $_GET['month'] ?></b></h2></div>
+<br>
 <div class="blogPost">
     <?php
     foreach($archivePost->getArchivePost() as $posts) {?>

@@ -22,54 +22,52 @@ class archivePostDisplay {
         require_once('blogPost.php');
         $pdo = DB::getInstance();
         switch ($month) {
-            case '01':
+            case 'January':
                 $stmt = $pdo->prepare(archivePostDisplay::januaryStmt);
                 break;
-            case '02':
+            case 'February':
                 $stmt = $pdo->prepare(archivePostDisplay::februaryStmt);
                 break;
-            case '03':
+            case 'March':
                 $stmt = $pdo->prepare(archivePostDisplay::marchStmt);
                 break;
-            case '04':
+            case 'April':
                 $stmt = $pdo->prepare(archivePostDisplay::aprilStmt);
                 break;
-            case '05':
+            case 'May':
                 $stmt = $pdo->prepare(archivePostDisplay::mayStmt);
                 break;
-            case '06':
+            case 'June':
                 $stmt = $pdo->prepare(archivePostDisplay::juneStmt);
                 break;
-            case '07':
+            case 'July':
                 $stmt = $pdo->prepare(archivePostDisplay::julyStmt);
                 break;
-            case '08':
+            case 'August':
                 $stmt = $pdo->prepare(archivePostDisplay::augustStmt);
                 break;
-            case '09':
+            case 'September':
                 $stmt = $pdo->prepare(archivePostDisplay::septemberStmt);
                 break;
-            case '10':
+            case 'October':
                 $stmt = $pdo->prepare(archivePostDisplay::octoberStmt);
                 break;
-            case '11':
+            case 'November':
                 $stmt = $pdo->prepare(archivePostDisplay::novemberStmt);
                 break;
-            case '12':
+            case 'December':
                 $stmt = $pdo->prepare(archivePostDisplay::decemberStmt);
                 break;
             default:
                 echo "Sorry there are no archived blog posts for this month.<br>Please select an alternative month.";
                 break;
         }
-   
-        
-        
+  
         $stmt->execute();
         while ($results = $stmt->fetch()) {
             $blogPost = new BlogPost($results ['blogPostID']);
             array_push($this->archivePost, $blogPost);
-        }
+        }     
     }
     
     public function getArchivePost()

@@ -340,3 +340,10 @@ div.blogPost img {
     color: #343F3E;
     text-decoration: underline;
 }
+
+.archiveTitle {
+    text-decoration: underline overline;
+    text-align: center;
+    background: #343F3E;
+    color: white;
+}
