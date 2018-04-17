@@ -78,7 +78,7 @@
     var selection = txtarea.value.substring(start, finish);
     // put the markup langauge around the selected content
     if (markup == 'link'){
-        var formatted = '(INSERT LINK HERE)'+'['+'selection'+']';
+        var formatted = '(INSERT LINK HERE)'+'['+selection+']';
     }
     else{
         var formatted = markup+selection+markup;
