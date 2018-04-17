@@ -8,7 +8,7 @@
 
 <form action="/action_page.php">
 
- <h3>Please leave your query, we will get back to you as soon as we can, Thankyou</h3>
+ <h3>Please leave your query, we will get back to you as soon as we can, Thank you</h3>
     
   First name:<br>
   <input type="text" name="firstname" value="">
