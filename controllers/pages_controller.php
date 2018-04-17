@@ -30,7 +30,9 @@ class PagesController {
         require_once 'views/pages/logout.php';
     }
     
-
+    public function contactUs() {
+        require_once('views/pages/contactUs.php');
+    }
 
 
 }
