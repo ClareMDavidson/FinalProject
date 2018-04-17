@@ -30,7 +30,12 @@ class commentController {
             require_once('views/blogPost/viewBlogPost.php');
         }
     }
-    
+    public function alterScore($commentPostID,$scoreChange){
+        require_once('models/comment.php');
+        filter_input(INPUT_POST, '+');
+        $newScore->alterScore($commentPostID, $scoreChange);
+        require_once('views/blogpost/viewBlogPost.php');
+    }
 //    public function viewComment() {
 //        require_once('models/comment.php');
 //        //require_once('models/blogPost.php');

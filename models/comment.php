@@ -92,6 +92,19 @@ class Comment {
         { 
             return $this->commentScore;
         } 
+    public function getCommentPostID(){
+        return $this->commentPostID;
+    }
+    public function alterScore($commentID,$scoreChange){
+        $pdo=DB::getInstance();
+        if($scoreChange=='plus'){
+        $stmt = $pdo->prepare("UPDATE comment SET commentScore = commentScore + 1 WHERE CommentPostID = :commentID;");       
+    } else {
+        $stmt = $pdo->prepare("UPDATE comment SET commentScore = commentScore - 1 WHERE CommentPostID = :commentID;");       
+    }
+    $stmt->execute(["commentID"=>$commentID]);  
+    }
+    
     public function addOneToScore(){
         $currentScore = $this->commentScore;
         $newScore = $currentScore + 1;

@@ -9,12 +9,15 @@
 <hr id="style1">
 <p><b>Comments:</b></p> 
 <?php
-    foreach($blogPost->getComments() as $comment) {?>
+    foreach($blogPost->getComments() as $comment) { ?>
 <h5 align="left"><b><?php echo $comment->getUsername(); ?></b></h5>
-        <p><?php echo $comment->getContent(); ?></p><br>
-        <h5><?php echo $comment->getTimeCommented() . " | " . $comment->getDateCommented()?></h5>    
-        <hr>   <?php
-    } ?>
+<p><?php echo $comment->getContent(); ?></p>
+<div class="row"><div class="col-sm-10"></div><div class="col-sm-2"><a href="index.php?controller=comment&action=alterScore&score=plus&commentPostID=" <?php. $comment->getCommentPostID();?>><img name="+" style="height: 20px; width: auto;" src="views/images/uparrow.png"></a></div></div><p></p>
+<div class="row"><div class="col-sm-10"></div><div class="col-sm-2" style="float: right"><p><span id="score"><?php echo $comment->getScore();?></span></p></div></div>
+<div class="row"><div class="col-sm-10"></div><div class="col-sm-2"><a href="index.php?controller=comment&action=alterScore&score=+&commentPostID="<?php. $comment->getCommentPostID();?>><img name="minus" style="height: 20px; width: auto;" src="views/images/downarrow.png"></a></div></div>
+<h5><?php echo $comment->getTimeCommented() . " | " . $comment->getDateCommented()?></h5>    
+<hr>   <?php 
+        } ?>
         <hr> 
 <div class="col-sm-8" id="commentForm" style="height:auto; margin: 0 auto; align:center;">
 <form action="index.php?controller=comment&action=saveComment" method="POST">
