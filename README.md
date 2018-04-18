@@ -11,3 +11,12 @@ SHOW GRANTS FOR blogger@localhost;
 Blogger login:
 BLOGGER
 password123
+
+
+commenters:
+JabbaHutt, jabbahutt@starwars.com
+Harry22, Harry22@gmail.com
+TheBexter, becky@gmail.com
+Ghorgon, joe@medusa.co.uk
+Pawnstar99, john.smith@google.com
+MaryBarry, mary.barry@gmail.com
