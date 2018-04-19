@@ -59,7 +59,7 @@
       
 
   </ul>
-    </ul></div>
+    </div>
         </nav>
 <div class="container-fluid"><div class="row"><div class="col-sm-12">  <br><br>     </div></div></div>
 <!--navbar ends and main content begins-->
