@@ -53,10 +53,15 @@ class commentController {
 //    }
 //
     public function viewUnapproved(){
-        require_once('models/commentModeration.php');
-        require_once('models/comment.php');
-        $commentModeration = new CommentModeration();
-        require_once('views/blogPost/commentModeration.php');
+        if (!empty ($_SESSION['username'])){
+            require_once('models/commentList.php');
+            require_once('models/comment.php');
+            $commentList = new CommentList();
+            require_once('views/blogPost/commentModeration.php');
+        }
+        else {
+            require_once('views/pages/login.php');
+        }
     }
     
     public function moderate(){
@@ -66,7 +71,6 @@ class commentController {
         $comment = new Comment($commentPostID);
         $comment->moderate($decision);
         header("Location: index.php?controller=comment&action=viewUnapproved");
-        
     }
         
         

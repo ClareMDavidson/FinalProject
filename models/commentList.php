@@ -1,6 +1,6 @@
 <?php
-class CommentModeration {
-    private $commentModeration=array();
+class CommentList {
+    private $commentList=array();
 
 
     public function __construct(){
@@ -12,14 +12,15 @@ class CommentModeration {
                     $stmt->execute();
                     while ($results = $stmt->fetch()){
                        $comment = new Comment($results ['commentPostID']);
-                       array_push($this->commentModeration, $comment);
+                       array_push($this->commentList, $comment);
                     }
         }catch (Exception $ex) {
             echo $ex->getMessage().PHP_EOL;
         }
     }
-    public function getCommentModeration()
+    public function getCommentlist()
     {
-        return $this->commentModeration;
+        return $this->commentList;
     }
+    
 }

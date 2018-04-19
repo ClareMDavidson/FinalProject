@@ -1,8 +1,8 @@
 <div class="blogPost">
     <?php
-        if (count($commentModeration->getCommentModeration())>0){ ?>
+        if (count($commentList->getCommentList())>0){ ?>
 
-                <?php foreach($commentModeration->getCommentModeration() as $comment) { ?>
+                <?php foreach($commentList->getCommentList() as $comment) { ?>
                 <h3>Comment left on: <?php echo $comment->getPost()->getTitle();?></h3>
                 <h5><b><?php echo $comment->getUsername(); ?></b></h5>
                 <p><?php echo $comment->getContent(); ?></p>
