@@ -23,8 +23,25 @@
                 <li class="nav-item"><a class="nav-link" href='?controller=pages&action=about'>About</a></li></h2>
             <h2 text-decoration="none" color="#F8FFF4">
                 <li class="nav-item"><a class="nav-link" href='#'>Recent Posts</a></li></h2>
-            <h2 text-decoration="none" color="#F8FFF4">
-                <li class="nav-item"><a class="nav-link" href='#'>Archive</a></li></h2>
+                <div class="dropdown" >
+                <h2 text-decoration="none" color="#F8FFF4">
+                    <li class="nav-item"><a class="nav-link" href="#">Archive</a></li>
+                </h2>
+                    <div class="dropdown-content">
+                        <a href="?controller=pages&action=archive&month=April" id="04">April 2018</a>
+                        <a href="?controller=pages&action=archive&month=March" id="03">March 2018</a>
+                        <a href="?controller=pages&action=archive&month=February" id="02">February 2018</a>
+                        <a href="?controller=pages&action=archive&month=January" id="01">January 2018</a>
+                        <a href="?controller=pages&action=archive&month=December" id="12">December 2017</a>
+                        <a href="?controller=pages&action=archive&month=November" id="11">November 2017</a>
+                        <a href="?controller=pages&action=archive&month=October" id="10">October 2017</a>
+                        <a href="?controller=pages&action=archive&month=September" id="09">September 2017</a>
+                        <a href="?controller=pages&action=archive&month=August" id="08">August 2017</a>
+                        <a href="?controller=pages&action=archive&month=July" id="07">July 2017</a>
+                        <a href="?controller=pages&action=archive&month=June" id="06">June 2017</a>
+                        <a href="?controller=pages&action=archive&month=May" id="05">May 2017</a>   
+                    </div>
+                </div>
             <h2 text-decoration="none" color="#F8FFF4">
                 <li class="nav-item"><a class="nav-link" href='?controller=pages&action=contact'>Get in Touch</a></li></h2>
             <h2 text-decoration="none" color="#F8FFF4">
