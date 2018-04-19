@@ -12,7 +12,8 @@ if (empty($posts)) {
     <br>
     <div class="blogPost">
         <?php foreach ($archivePost->getArchivePost() as $posts) { ?>
-            <h2><?php echo $posts->getTitle(); ?></h2>
+        
+        <div class="blogLink"><h2><a href="http://localhost/FinalProject/index.php?controller=blogPost&action=view&blogPostID="<?php echo $posts->getID();?>><?php echo $posts->getTitle();?></a></h2></div>                            
             <p><?php echo $posts->getContent(); ?></p>
             <p><b><?php echo "Posted on: " . $posts->getDate(); ?></b></p>
             <p><?php echo "Keywords: " . $posts->getKeywords(); ?></p>
