@@ -30,7 +30,19 @@ class commentController {
             require_once('views/blogPost/viewBlogPost.php');
         }
     }
-    
+    public function alterScore(){
+        require_once('models/comment.php');
+        $scoreChange = filter_input(INPUT_GET, 'score', FILTER_SANITIZE_STRING);
+        $commentPostID = filter_input(INPUT_GET, 'commentPostID', FILTER_SANITIZE_STRING);
+        filter_input(INPUT_GET, 'blogPostID', FILTER_SANITIZE_NUMBER_INT);
+        $comment = new Comment($commentPostID);
+        if ($comment->alterScore($commentPostID, $scoreChange)){
+            header("Location: index.php?controller=blogPost&action=view&blogPostID=". $_GET['blogPostID']. "#comment". $_GET['commentPostID']);
+        }
+        else {
+            require_once('views/pages/error.php');
+        }
+    }
 //    public function viewComment() {
 //        require_once('models/comment.php');
 //        //require_once('models/blogPost.php');

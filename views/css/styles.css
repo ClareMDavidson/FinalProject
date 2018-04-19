@@ -289,6 +289,7 @@ div.blogPost img {
     padding-top: 5px;
     padding-bottom: 5px;
 }*/
+
 .dropdown1 {
     float: left;
     overflow: hidden;
@@ -347,3 +348,11 @@ div.blogPost img {
     background: #343F3E;
     color: white;
 }
+
+button.markup{
+    color: black;
+    background-color: #d1e3c5;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+

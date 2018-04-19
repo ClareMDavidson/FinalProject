@@ -92,25 +92,44 @@ class Comment {
         { 
             return $this->commentScore;
         } 
-    public function addOneToScore(){
-        $currentScore = $this->commentScore;
-        $newScore = $currentScore + 1;
+    public function getCommentPostID(){
+        return $this->commentPostID;
+    }
+    public function alterScore($commentPostID,$scoreChange){
         try {
-            $pdo = DB::getInstance();
-            $stmt = $pdo->prepare("INSERT INTO comment(commentScore)) VALUE (:newscore)");
-            $stmt->execute(array(
-                "commentPostID" => $this->blogPostID, "username" => $this->username,"userEmail" => $this->userEmail, 
-                "content" => $this->content, "dateCommented" => $this->dateCommented, "timeCommented" => $this->timeCommented
-                ));
-//            $this->commentPostID = $pdo->lastInsertId(); 
+            $pdo=DB::getInstance();
+            if($scoreChange=='plus'){
+                $stmt = $pdo->prepare("UPDATE comment SET commentScore = commentScore + 1 WHERE CommentPostID = :commentPostID;");       
+            } else {
+                $stmt = $pdo->prepare("UPDATE comment SET commentScore = commentScore - 1 WHERE CommentPostID = :commentPostID;");
+            }
+            $stmt->execute(array("commentPostID"=>$commentPostID));
             return true;
         }catch (Exception $ex) {
             echo $ex->getMessage().PHP_EOL;
         }
+    //return $newScore;
     }
-    public function minusOneToScore(){
-        
-    }
-  }
     
+//    public function addOneToScore(){
+//        $currentScore = $this->commentScore;
+//        $newScore = $currentScore + 1;
+//        try {
+//            $pdo = DB::getInstance();
+//            $stmt = $pdo->prepare("INSERT INTO comment(commentScore)) VALUE (:newscore)");
+//            $stmt->execute(array(
+//                "commentPostID" => $this->blogPostID, "username" => $this->username,"userEmail" => $this->userEmail, 
+//                "content" => $this->content, "dateCommented" => $this->dateCommented, "timeCommented" => $this->timeCommented
+//                ));
+////            $this->commentPostID = $pdo->lastInsertId(); 
+//            return true;
+//        }catch (Exception $ex) {
+//            echo $ex->getMessage().PHP_EOL;
+//        }
+//    }
+//    public function minusOneToScore(){
+//        
+//    }
+}
+//    
     
