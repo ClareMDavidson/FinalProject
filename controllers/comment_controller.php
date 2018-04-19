@@ -24,7 +24,8 @@ class commentController {
         if ($comment->create($_POST['blogPostID'], $username, $userEmail, $content)){
             //what does this mean^^
             //require_once('views/blogPost/viewBlogPost.php');
-            header("Location: index.php?controller=blogPost&action=view&blogPostID=". $_POST['blogPostID']);
+            //header("Location: index.php?controller=blogPost&action=view&blogPostID=". $_POST['blogPostID']);
+            require_once('views/blogPost/commentThankYou.php');
         }
         else{
             require_once('views/blogPost/viewBlogPost.php');
@@ -51,5 +52,28 @@ class commentController {
 //        //require_once('views/blogPost/viewBlogPost.php');
 //        header("http://localhost/FinalProject/index.php?controller=blogPost&action=view&blogPostID=$blogPostID");
 //    }
-//    
+//
+    public function viewUnapproved(){
+        if (!empty ($_SESSION['username'])){
+            require_once('models/commentList.php');
+            require_once('models/comment.php');
+            $commentList = new CommentList();
+            require_once('views/blogPost/commentModeration.php');
+        }
+        else {
+            require_once('views/pages/login.php');
+        }
+    }
+    
+    public function moderate(){
+        require_once('models/comment.php');
+        $decision = filter_input(INPUT_POST, 'moderate', FILTER_SANITIZE_STRING);
+        $commentPostID = filter_input(INPUT_POST, 'commentPostID',FILTER_SANITIZE_STRING);
+        $comment = new Comment($commentPostID);
+        $comment->moderate($decision);
+        header("Location: index.php?controller=comment&action=viewUnapproved");
+    }
+        
+        
 }
+        

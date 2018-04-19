@@ -28,7 +28,7 @@
 
 $controllers = array('pages' => ['home', 'error', 'login', 'logout', 'contactUs', 'archive'],
                     'blogPost' => ['write', 'save', 'view'],
-                    'comment'=>['writeComment', 'saveComment', 'viewComment', 'alterScore'],
+                    'comment'=>['writeComment', 'saveComment', 'viewComment', 'alterScore', 'moderate', 'viewUnapproved'],
                     'image' => ['upload', 'save'],
                     'controllerXXX' => ['actionYYY', 'actionZZZ'],
                     );

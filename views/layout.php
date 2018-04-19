@@ -19,7 +19,14 @@
   <div class="collapse navbar-collapse" id="navbarToggler1">
  
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0"> 
+<!--            <h2 text-decoration="none" color="#F8FFF4">
+                <li class="nav-item"><a class="nav-link" href='?controller=pages&action=about'>About</a></li></h2>-->
             <h2 text-decoration="none" color="#F8FFF4">
+
+                <li class="nav-item"><a class="nav-link" href='?controller=pages&action=home'>Recent Posts</a></li></h2>
+            <h2 text-decoration="none" color="#F8FFF4">
+                <li class="nav-item"><a class="nav-link" href='#'>Archive</a></li></h2>
+
                 <li class="nav-item"><a class="nav-link" href='?controller=pages&action=about'>About</a></li></h2>
             <h2 text-decoration="none" color="#F8FFF4">
                 <li class="nav-item"><a class="nav-link" href='#'>Recent Posts</a></li></h2>
@@ -42,8 +49,9 @@
                         <a href="?controller=pages&action=archive&month=May" id="05">May 2017</a>   
                     </div>
                 </div>
+
             <h2 text-decoration="none" color="#F8FFF4">
-                <li class="nav-item"><a class="nav-link" href='?controller=pages&action=contact'>Get in Touch</a></li></h2>
+                <li class="nav-item"><a class="nav-link" href='?controller=pages&action=contactUs'>Get in Touch</a></li></h2>
             <h2 text-decoration="none" color="#F8FFF4">
                 <li class="nav-item"><a class="nav-link" href='?controller=blogPost&action=write'>
                     <?php          
@@ -53,7 +61,22 @@
             }
             
             if(!empty($_SESSION)){
-                echo "Create New Post";
+                echo "New Blog Post";
+            }   
+
+            ?></a></li></h2>
+            <h2 text-decoration="none" color="#F8FFF4">
+                <li class="nav-item"><a class="nav-link" href='?controller=comment&action=viewUnapproved'>
+                    <?php          
+                   
+            if (empty($_SESSION)){
+              echo "";
+            }
+            if(!empty($_SESSION)){
+                require_once('models/commentList.php');
+                require_once('models/comment.php');
+                $commentList = new CommentList();
+                echo "Moderate Comments (". count($commentList->getCommentList()). ")";
             }   
 
             ?></a></li></h2>
@@ -76,7 +99,7 @@
       
 
   </ul>
-    </ul></div>
+    </div>
         </nav>
 <div class="container-fluid"><div class="row"><div class="col-sm-12">  <br><br>     </div></div></div>
 <!--navbar ends and main content begins-->
