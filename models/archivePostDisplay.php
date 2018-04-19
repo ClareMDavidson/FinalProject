@@ -67,7 +67,7 @@ class archivePostDisplay {
         while ($results = $stmt->fetch()) {
             $blogPost = new BlogPost($results ['blogPostID']);
             array_push($this->archivePost, $blogPost);
-        }     
+        }
     }
     
     public function getArchivePost()

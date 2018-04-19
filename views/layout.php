@@ -36,7 +36,7 @@
                         <a href="?controller=pages&action=archive&month=November" id="11">November 2017</a>
                         <a href="?controller=pages&action=archive&month=October" id="10">October 2017</a>
                         <a href="?controller=pages&action=archive&month=September" id="09">September 2017</a>
-                        <a href="?controller=pages&action=archive&month=Augst" id="08">August 2017</a>
+                        <a href="?controller=pages&action=archive&month=August" id="08">August 2017</a>
                         <a href="?controller=pages&action=archive&month=July" id="07">July 2017</a>
                         <a href="?controller=pages&action=archive&month=June" id="06">June 2017</a>
                         <a href="?controller=pages&action=archive&month=May" id="05">May 2017</a>   
