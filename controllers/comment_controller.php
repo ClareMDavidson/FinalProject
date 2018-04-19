@@ -51,5 +51,24 @@ class commentController {
 //        //require_once('views/blogPost/viewBlogPost.php');
 //        header("http://localhost/FinalProject/index.php?controller=blogPost&action=view&blogPostID=$blogPostID");
 //    }
-//    
+//
+    public function viewUnapproved(){
+        require_once('models/commentModeration.php');
+        require_once('models/comment.php');
+        $commentModeration = new CommentModeration();
+        require_once('views/blogPost/commentModeration.php');
+    }
+    
+    public function moderate(){
+        require_once('models/comment.php');
+        $decision = filter_input(INPUT_POST, 'moderate', FILTER_SANITIZE_STRING);
+        $commentPostID = filter_input(INPUT_POST, 'commentPostID',FILTER_SANITIZE_STRING);
+        $comment = new Comment($commentPostID);
+        $comment->moderate($decision);
+        header("Location: index.php?controller=comment&action=viewUnapproved");
+        
+    }
+        
+        
 }
+        

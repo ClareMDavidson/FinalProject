@@ -9,6 +9,7 @@ class Comment {
     private $dateCommented;
     private $commentScore;
     private $approved;
+    private $post=NULL;
     
     public function __construct($commentPostID=NULL) {
         try {
@@ -100,6 +101,13 @@ class Comment {
     public function getApproved(){
         return $this->approved;
     }
+    public function getPost(){
+        require_once("models/blogpost.php");
+        if(!isset($this->post)){
+            $this->post=new BlogPost($this->blogPostID);
+        } //only load the object when you need to use it, but once it's loaded reuse it.
+        return $this->post;
+    }
     
     public function alterScore($commentPostID,$scoreChange){
         try {
@@ -112,6 +120,21 @@ class Comment {
             $stmt->execute(array("commentPostID"=>$commentPostID));
             return true;
         }catch (Exception $ex) {
+            echo $ex->getMessage().PHP_EOL;
+        }
+    }
+    
+    public function moderate($decision){
+        try{
+            $pdo=DB::getInstance();
+            if ($decision=='Yes'){
+                $stmt = $pdo->prepare("UPDATE comment SET approved='Yes' WHERE commentPostID= :commentPostID;");
+            } else {
+                $stmt = $pdo->prepare("DELETE FROM comment WHERE commentPostID= :commentPostID;");
+            }
+            $stmt->execute(array("commentPostID"=>$this->commentPostID));
+            return true;
+        } catch (Exception $ex) {
             echo $ex->getMessage().PHP_EOL;
         }
     }
