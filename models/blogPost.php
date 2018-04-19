@@ -22,7 +22,7 @@
                 $this->keywords = $results ['keywords'];
                 
                 $stmt = $pdo->prepare("SELECT commentPostID from comment
-                    WHERE blogPostID = :blogPostID
+                    WHERE blogPostID = :blogPostID AND approved = 'Yes'
                     ORDER BY commentPostID DESC;");
                 $stmt->execute (["blogPostID"=>$blogPostID]);
                 while ($results = $stmt->fetch()){

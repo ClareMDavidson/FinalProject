@@ -8,6 +8,7 @@ class Comment {
     private $timeCommented;
     private $dateCommented;
     private $commentScore;
+    private $approved;
     
     public function __construct($commentPostID=NULL) {
         try {
@@ -24,6 +25,7 @@ class Comment {
                 $this->timeCommented = $results['timeCommented'];
                 $this->dateCommented = $results['dateCommented'];
                 $this->commentScore = $results ['commentScore'];
+                $this->approved = $results ['approved'];
             }
         }catch (Exception $ex) {
             echo $ex->getMessage().PHP_EOL;
@@ -95,6 +97,10 @@ class Comment {
     public function getCommentPostID(){
         return $this->commentPostID;
     }
+    public function getApproved(){
+        return $this->approved;
+    }
+    
     public function alterScore($commentPostID,$scoreChange){
         try {
             $pdo=DB::getInstance();
@@ -108,28 +114,7 @@ class Comment {
         }catch (Exception $ex) {
             echo $ex->getMessage().PHP_EOL;
         }
-    //return $newScore;
     }
-    
-//    public function addOneToScore(){
-//        $currentScore = $this->commentScore;
-//        $newScore = $currentScore + 1;
-//        try {
-//            $pdo = DB::getInstance();
-//            $stmt = $pdo->prepare("INSERT INTO comment(commentScore)) VALUE (:newscore)");
-//            $stmt->execute(array(
-//                "commentPostID" => $this->blogPostID, "username" => $this->username,"userEmail" => $this->userEmail, 
-//                "content" => $this->content, "dateCommented" => $this->dateCommented, "timeCommented" => $this->timeCommented
-//                ));
-////            $this->commentPostID = $pdo->lastInsertId(); 
-//            return true;
-//        }catch (Exception $ex) {
-//            echo $ex->getMessage().PHP_EOL;
-//        }
-//    }
-//    public function minusOneToScore(){
-//        
-//    }
+
 }
-//    
     
