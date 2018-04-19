@@ -21,6 +21,7 @@
                     <button type="submit" name="Submit" class="markup">Submit</button>
                 </div>
                 <p>Comments that are <b>not</b> approved will be deleted.</p>
+                <hr>
             </form>
             <?php 
             }
