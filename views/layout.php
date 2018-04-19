@@ -47,9 +47,11 @@
             if (empty($_SESSION)){
               echo "";
             }
-            
             if(!empty($_SESSION)){
-                echo "Moderation";
+                require_once('models/commentList.php');
+                require_once('models/comment.php');
+                $commentList = new CommentList();
+                echo "Moderate Comments (". count($commentList->getCommentList()). ")";
             }   
 
             ?></a></li></h2>

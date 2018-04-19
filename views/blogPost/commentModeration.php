@@ -26,7 +26,7 @@
             <?php 
             }
         } else {
-            echo '<h5>There are no comments waiting to be moderated</h5>';
+            echo '<h2>There are no comments waiting to be moderated</h2>';
         }
     ?>
 </div>
