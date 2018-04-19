@@ -8,7 +8,8 @@ class CommentList {
         try{
             $pdo = DB::getInstance();
             $stmt = $pdo->prepare("SELECT commentPostID FROM comment
-                    WHERE approved IS NULL;");
+                    WHERE approved IS NULL
+                    ORDER BY commentPostID DESC;");
                     $stmt->execute();
                     while ($results = $stmt->fetch()){
                        $comment = new Comment($results ['commentPostID']);
@@ -18,7 +19,7 @@ class CommentList {
             echo $ex->getMessage().PHP_EOL;
         }
     }
-    public function getCommentlist()
+    public function getCommentList()
     {
         return $this->commentList;
     }
