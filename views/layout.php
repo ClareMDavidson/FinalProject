@@ -36,7 +36,7 @@
             }
             
             if(!empty($_SESSION)){
-                echo "New Post";
+                echo "New Blog Post";
             }   
 
             ?></a></li></h2>

@@ -24,7 +24,8 @@ class commentController {
         if ($comment->create($_POST['blogPostID'], $username, $userEmail, $content)){
             //what does this mean^^
             //require_once('views/blogPost/viewBlogPost.php');
-            header("Location: index.php?controller=blogPost&action=view&blogPostID=". $_POST['blogPostID']);
+            //header("Location: index.php?controller=blogPost&action=view&blogPostID=". $_POST['blogPostID']);
+            require_once('views/blogPost/commentThankYou.php');
         }
         else{
             require_once('views/blogPost/viewBlogPost.php');
