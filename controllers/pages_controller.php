@@ -8,6 +8,7 @@ class PagesController {
       require_once('models/blogPost.php');
       require_once('models/comment.php');
       $multiPost = new MultiPostDisplay();
+      $multiPost->generateLastThreePosts();
       require_once('views/pages/home.php');
     }
     

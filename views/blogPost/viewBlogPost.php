@@ -2,7 +2,8 @@
     <h2><?php echo $blogPost->getTitle();?></h2>
     <p><b><?php echo "Posted on: ". $blogPost->getDate(); ?></b></p>
     <p><?php echo $blogPost->getContent(); ?></p>
-    <p id="keywords"><?php echo "Keywords: ".$blogPost->getKeywords(); ?></b></p>
+    <p id="keywords"><?php echo "Keywords: ";
+    echo implode(', ', $blogPost->getKeywords());?></p>
 </div>
 <div class="sharethis-inline-share-buttons" id="socialmedia"></div>
 <br />

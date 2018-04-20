@@ -119,12 +119,8 @@
     <br><br><br>
      <h3>Twitter feed might go here</h3>
     <br><br><br>
-    <h2>Word Cloud</h2>
-    <h5> vegetarian - spicy - gluten-free <br>
-        winter-warmer - family - tag <br>
-        placeholder - tags - demo <br>
-        follow - these - links <br><br><br>
-    </h5>
+    <h2>Search</h2>
+    <?php require_once('views/sidebar/wordCloud.php');?>
     
      
 </div></div><div class="col-sm-1"><br></div></div></div>
