@@ -6,6 +6,7 @@
     private $date;
     private $keywords;
     private $comments=array();
+    private $reactions=array();
 
     public function __construct($blogPostID=NULL) {
         try {
@@ -33,7 +34,15 @@
         }catch (Exception $ex) {
             echo $ex->getMessage().PHP_EOL;
         }
-    }
+                                        require_once("models/reaction.php");
+                $pdo = DB::getInstance();
+                $stmt = $pdo->prepare("SELECT reactionPostID from reaction "
+                        . "WHERE blogPostID = :blogPostID;");
+                $stmt->execute (["blogPostID"=>$blogPostID]);
+                while ($results = $stmt->fetch()){
+                $reactions = new Reaction($results ['reactionPostID']);
+                array_push($this->reactions, $reactions);
+    }}
     
     public function create($title, $content, $keywords){
         try {
@@ -50,6 +59,16 @@
                 "keywords" => $this->keywords
                 ));
             $this->blogPostID = $pdo->lastInsertId();
+            $pdo = DB::getInstance();
+            $stmt2 = $pdo->prepare("INSERT INTO reaction(blogPostID, liked, loved, wowed, angered) VALUES (:blogPostID, :liked, :loved, :wowed, :angered;)");
+            $stmt2->execute(array(
+            "blogPostID" => $this->blogPostID,
+            "liked" => 0,
+            "loved" => 0,
+            "wowed" => 0,
+            "angered" => 0,
+                ));
+
             return true;
         }catch (Exception $ex) {
             echo $ex->getMessage().PHP_EOL;
@@ -86,4 +105,8 @@
         { 
             return $this->comments;
         }  
+    public function getReactions()
+    {
+        return $this->reactions;
+    } 
   }
