@@ -2,8 +2,22 @@
     <h2><?php echo $blogPost->getTitle();?></h2>
     <p><b><?php echo "Posted on: ". $blogPost->getDate(); ?></b></p>
     <p><?php echo $blogPost->getContent(); ?></p>
-    <p id="keywords"><?php echo "Keywords: ";
-    echo implode(', ', $blogPost->getKeywords());?></p>
+    <p id="keywords">Keywords:
+    <?php
+        //echo implode(', ', $blogPost->getKeywords());
+        $loop=0;
+        $numberOfKeywords=count($blogPost->getKeywords());
+        foreach($blogPost->getKeywords() as $keyword){
+            $loop++;?>
+            <a href="index.php?controller=search&action=view&keyword=<?php echo $keyword;?>">
+                <?php echo $keyword;
+                if($loop != $numberOfKeywords){
+                    echo ", ";
+                }?>
+            </a><?php
+        }?>
+    </p>
+            
 </div>
 <div class="sharethis-inline-share-buttons" id="socialmedia"></div>
 <br />
@@ -40,4 +54,3 @@
         <button class="loginButton form-control hvr-fade" type="submit" name="Submit">Submit</button>
 </form>
     </div>
-
