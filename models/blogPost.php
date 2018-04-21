@@ -6,6 +6,7 @@
     private $date;
     private $keywords=array();
     private $comments=array();
+    private $reactions;
 
     public function __construct($blogPostID=NULL) {
         try {
@@ -132,4 +133,8 @@
         { 
             return $this->comments;
         }  
+        public function getReactions()
+    {
+        return $this->reactions;
+    } 
   }
