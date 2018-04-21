@@ -18,8 +18,9 @@ class blogPostController {
         filter_input(INPUT_POST, 'Content', FILTER_SANITIZE_STRING);
         filter_input(INPUT_POST, 'Keywords', FILTER_SANITIZE_STRING);
         $content = nl2br($_POST['Content']);
+        $keywords = explode(',', $_POST['Keywords']);
         $blogPost = new blogPost();
-        if ($blogPost->create($_POST['Title'], $content, $_POST['Keywords'])){
+        if ($blogPost->create($_POST['Title'], $content, $keywords)){
             require_once('views/blogPost/viewBlogPost.php');
         }
         else{
