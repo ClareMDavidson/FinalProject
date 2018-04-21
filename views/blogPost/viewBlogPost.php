@@ -9,7 +9,7 @@
         $numberOfKeywords=count($blogPost->getKeywords());
         foreach($blogPost->getKeywords() as $keyword){
             $loop++;?>
-            <a href="index.php?controller=search&action=view&keyword=<?php echo $keyword;?>">
+            <a class="keywordsLink" href="index.php?controller=search&action=view&keyword=<?php echo $keyword;?>">
                 <?php echo $keyword;
                 if($loop != $numberOfKeywords){
                     echo ", ";

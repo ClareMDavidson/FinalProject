@@ -392,3 +392,11 @@ h2.reactions {
 h2.reactions img {
     width: 7%;
 }
+
+div.blogPost a {
+    color:  #696969;
+}
+div.blogPost a:hover {
+    color: #343F3E;
+    text-decoration: underline;
+}
