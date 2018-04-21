@@ -41,6 +41,10 @@ class PagesController {
     public function contactUs() {
         require_once('views/pages/contactUs.php');
     }
+    
+    public function register() {
+        require_once('views/pages/registration.php');
+    }
 
 
 }
