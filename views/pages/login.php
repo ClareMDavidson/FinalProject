@@ -15,6 +15,6 @@
         </label><br>
         <button class="loginButton form-control hvr-grow hvr-fade" type="submit">Log in</button><br>
         <br>
-        <div class="blogLink"><p><a href="http://localhost/FinalProject/index.php?controller=pages&action=register">Register to become a contributor</a></p></div>
+        <p style="text-align: center;"><a class="blogLink" href="http://localhost/FinalProject/index.php?controller=pages&action=register">Register to become a contributor</a></p>
     </form>
 </div>
