@@ -378,3 +378,12 @@ ul.wordCloud li {
 /*div.col-sm-2 {
     width: 100%;
 }*/
+
+h2.reactions {
+    float: right;
+    align-content: right;
+}
+
+h2.reactions img {
+    width: 7%;
+}

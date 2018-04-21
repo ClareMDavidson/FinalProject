@@ -17,19 +17,28 @@
             </a><?php
         }?>
     </p>
-    <div class="col-sm-12" id="reactionbar" style="height:auto; margin: 0 auto; text-align: center">
-    <?php foreach($blogPost->getReactions() as $reaction){
-    echo '<h2 id="likeCount"style="display:inline">'. $reaction->getLikes() . '</h2>'; ?>
-    <a href="index.php?controller=reaction&action=addLike&=plus&reactionPostID=<?php echo $reaction->getReactionPostID();?>&blogPostID=<?php echo $blogPost->getID();?>" name="comment<?php echo $reaction->getReactionPostID();?>"> 
-    <?php echo '<img id="like" style="height: 40px; width: auto; display:inline;" src="/images/reactions/like.png" alt="like"/></a>';
-    echo '<h2 id="loveCount" style="display:inline">'. $reaction->getLoves() . '</h2>';
-    echo '<img id="love" style="height: 40px; width: auto; display:inline;" src="/images/reactions/love.png" alt="love"/>';
-    echo '<h2 id="wowCount" style="display:inline">' . $reaction->getWows() . '</h2>';
-    echo '<img id="wow" style="height: 40px; width: auto; display:inline;" src="/images/reactions/wow.png" alt="wow"/>';
-    echo '<h2 id="angerCount" style="display: inline">' . $reaction->getAngers() . '</h2>';
-    echo '<img id="anger" style="height: 40px; width: auto; display:inline" src="/images/reactions/anger.png" alt="anger"/>';
-     }?> 
+        <h2 class="reactions" >
+            <?php echo $blogPost->getLikes()?>
+                <a href="index.php?controller=reaction&action=addReaction&reaction=like&blogPostID=<?php echo $blogPost->getID();?>">
+                    <img src="views/images/reactions/like.png" alt="thumbs up" />
+                </a>
+            <?php echo $blogPost->getLoves()?>
+                <a href="index.php?controller=reaction&action=addReaction&reaction=love&blogPostID=<?php echo $blogPost->getID();?>">
+                    <img src="views/images/reactions/love.png" alt="thumbs up" />
+                </a>
+            <?php echo $blogPost->getWows()?>
+            <a href="index.php?controller=reaction&action=addReaction&reaction=wow&blogPostID=<?php echo $blogPost->getID();?>">
+                <img src="views/images/reactions/wow.png" alt="thumbs up" />
+            </a>
+            <?php echo $blogPost->getAngers()?>
+                <a href="index.php?controller=reaction&action=addReaction&reaction=angry&blogPostID=<?php echo $blogPost->getID();?>">
+                    <img src="views/images/reactions/anger.png" alt="thumbs up" />
+                </a>
+        </h2>
 </div>
+<br />
+<br />
+<br />
 <div class="sharethis-inline-share-buttons" id="socialmedia"></div>
 <br />
 <hr id="style1">

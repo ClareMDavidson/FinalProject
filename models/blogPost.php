@@ -4,9 +4,12 @@
     private $title;
     private $content;
     private $date;
+    private $liked;
+    private $loved;
+    private $wowed;
+    private $angered;
     private $keywords=array();
     private $comments=array();
-    private $reactions;
 
     public function __construct($blogPostID=NULL) {
         try {
@@ -30,6 +33,10 @@
                 $this->title = $results['title'];
                 $this->content = $results['content'];
                 $this->date = $results['datePosted'];
+                $this->liked = $results['liked'];
+                $this->loved = $results['loved'];
+                $this->wowed = $results['wowed'];
+                $this->angered = $results['angered'];
                 
                 $stmt = $pdo->prepare("SELECT commentPostID from comment
                     WHERE blogPostID = :blogPostID AND approved = 'Yes'
@@ -39,16 +46,6 @@
                    $comment = new Comment($results ['commentPostID']);
                    array_push($this->comments, $comment);
                 }
-                $this->blogPostID = $pdo->lastInsertId();
-                $pdo = DB::getInstance();
-                $stmt2 = $pdo->prepare("INSERT INTO reaction(blogPostID, liked, loved, wowed, angered) VALUES (:blogPostID, :liked, :loved, :wowed, :angered;)");
-                $stmt2->execute(array(
-                "blogPostID" => $this->blogPostID,
-                "liked" => 0,
-                "loved" => 0,
-                "wowed" => 0,
-                "angered" => 0,
-                    ));
                 return true;
             }
         }catch (Exception $ex) {
@@ -88,6 +85,37 @@
             echo $ex->getMessage().PHP_EOL;
         }
     }
+    
+     public function increaseReaction($blogPostID, $reactionType){
+         try{
+             $pdo = DB::getInstance();
+             if($reactionType=='like'){
+                $stmt = $pdo->prepare("UPDATE blogPost
+                   SET liked = liked +1
+                   WHERE blogPostID = :blogPostID;");
+             }
+             elseif($reactionType=='love'){
+                $stmt = $pdo->prepare("UPDATE blogPost
+                   SET loved = loved +1
+                   WHERE blogPostID = :blogPostID;");
+             }
+             elseif($reactionType=='wow'){
+                $stmt = $pdo->prepare("UPDATE blogPost
+                   SET wowed = wowed +1
+                   WHERE blogPostID = :blogPostID;");
+             }
+             elseif($reactionType=='angry'){
+                $stmt = $pdo->prepare("UPDATE blogPost
+                   SET angered = angered +1
+                   WHERE blogPostID = :blogPostID;");
+             }
+             $stmt->execute(array("blogPostID" =>$blogPostID));
+             return true;
+         } catch (Exception $ex) {
+                echo $ex->getMessage().PHP_EOL;
+         }
+     }
+    
     public function getTitle() 
         { 
             return $this->title;
@@ -133,8 +161,20 @@
         { 
             return $this->comments;
         }  
-        public function getReactions()
-    {
-        return $this->reactions;
-    } 
+    public function getLikes()
+        {
+        return $this->liked;
+        } 
+    public function getLoves()
+        {
+        return $this->loved;
+        } 
+    public function getWows()
+        {
+        return $this->wowed;
+        }
+    public function getAngers()
+        {
+        return $this->angered;
+        } 
   }
