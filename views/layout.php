@@ -83,13 +83,14 @@
         </ul>
   </div>
 <div class="dropdown dropdown-dark">
-<button type="button" href="?controller=login&action=login" id="userLoginButton" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown">
+<button type="button" href="?controller=login&action=login" id="userLoginButton" class="btn btn-default btn-lg" data-toggle="dropdown">
     <img style="height: 45px; width: 31px;" src="views/images/lockIcon.png">
     <span class="caret"></span></button>
-  <ul class="dropdown-menu dropdown-menu-right">
+  <ul class="dropdown-menu dropdown-menu-right dropdown-content">
   <?php      
       if (empty($_SESSION['username'])) {       
-        echo '<h3 text-decoration="none" color="#F8FFF4"><li class="loginDropdown"><a class="loginDropdown" href="?controller=pages&action=login">Blog Owner Login</a></li></h3>';
+        echo '<h3 style="text-align: center" text-decoration="none" color="#F8FFF4"><li class="loginDropdown"><a style="text-align: center" class="loginDropdown" href="?controller=pages&action=login">Blog Owner Login</a></li></h3>';
+        echo '<h3 style="text-align: center" text-decoration="none" color="#F8FFF4"><li class="loginDropdown"><a style="text-align: center" class="loginDropdown" href="?controller=pages&action=register">Register as contributor</a></li></h3>';
       }
       else if (!empty ($_SESSION['username'])) {
           echo '<h3 text-decoration="none" color="#F8FFF4"><li class="loginDropdown"><a class="loginDropdown" href="?controller=pages&action=logout">Blog Owner Log out</a></li></h3>';
