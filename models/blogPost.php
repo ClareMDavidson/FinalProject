@@ -85,9 +85,10 @@
         {
             $content = $this->content;
             $content = preg_replace('/\!\((.*?)\)/', '<img src="./views/images/userImages/\1" />', $content);
+            $content = preg_replace('/\((.*?)\)\[(.*?)\]/', '<a href="\1" target="_blank">\2</a>', $content);
             $content = preg_replace('/\*\*(.*?)\*\*/', '<b>\1</b>', $content);
-            $content = preg_replace('/\_(.*?)\_/', '<i>\1</i>', $content);
-            $content = preg_replace('/\>\>(.*?)\>\>/', '<center>\1</center>', $content);
+            $content = preg_replace('/\*(.*?)\*/', '<i>\1</i>', $content);
+            $content = preg_replace('/\>\>(.*?)\>/', '<center>\1</center>', $content);
             return $content;
         }
     
