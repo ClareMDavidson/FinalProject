@@ -3,6 +3,7 @@ create user blogger@localhost identified by 'bcmH$8MV6hM#o8os';
 
 GRANT SELECT on blogPost to blogger@localhost;
 GRANT INSERT on blogPost to blogger@localhost;
+GRANT UPDATE on blogPost to blogger@localhost;
 GRANT SELECT on comment to blogger@localhost;
 GRANT INSERT on comment to blogger@localhost;
 GRANT UPDATE on comment to blogger@localhost;
@@ -11,6 +12,7 @@ GRANT SELECT on keyword to blogger@localhost;
 GRANT INSERT on keyword to blogger@localhost;
 GRANT SELECT on blogPostkeyword to blogger@localhost;
 GRANT INSERT on blogPostkeyword to blogger@localhost;
+
 
 SHOW GRANTS FOR blogger@localhost;
 

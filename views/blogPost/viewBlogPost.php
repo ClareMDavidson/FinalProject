@@ -17,8 +17,28 @@
             </a><?php
         }?>
     </p>
-            
+        <h2 class="reactions" >
+            <?php echo $blogPost->getLikes()?>
+                <a href="index.php?controller=reaction&action=addReaction&reaction=like&blogPostID=<?php echo $blogPost->getID();?>">
+                    <img src="views/images/reactions/like.png" alt="thumbs up" />
+                </a>
+            <?php echo $blogPost->getLoves()?>
+                <a href="index.php?controller=reaction&action=addReaction&reaction=love&blogPostID=<?php echo $blogPost->getID();?>">
+                    <img src="views/images/reactions/love.png" alt="thumbs up" />
+                </a>
+            <?php echo $blogPost->getWows()?>
+            <a href="index.php?controller=reaction&action=addReaction&reaction=wow&blogPostID=<?php echo $blogPost->getID();?>">
+                <img src="views/images/reactions/wow.png" alt="thumbs up" />
+            </a>
+            <?php echo $blogPost->getAngers()?>
+                <a href="index.php?controller=reaction&action=addReaction&reaction=angry&blogPostID=<?php echo $blogPost->getID();?>">
+                    <img src="views/images/reactions/anger.png" alt="thumbs up" />
+                </a>
+        </h2>
 </div>
+<br />
+<br />
+<br />
 <div class="sharethis-inline-share-buttons" id="socialmedia"></div>
 <br />
 <hr id="style1">

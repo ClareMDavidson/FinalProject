@@ -31,6 +31,7 @@ $controllers = array('pages' => ['home', 'error', 'login', 'logout', 'contactUs'
                     'comment'=>['writeComment', 'saveComment', 'viewComment', 'alterScore', 'moderate', 'viewUnapproved'],
                     'image' => ['upload', 'save'],
                     'search' => ['view'],
+                    'reaction' => ['addReaction'],
                     );
 
   // check that the requested controller and action are both allowed
