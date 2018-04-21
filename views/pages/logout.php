@@ -2,7 +2,7 @@
 <?php
 
 if (empty($_SESSION)) {
-    echo '<h1>You have now been logged out.</h1>';
+    echo '<h2>You have now been logged out</h2>';
     
 }
  else {

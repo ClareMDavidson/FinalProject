@@ -333,13 +333,13 @@ div.blogPost img {
     display: block;
 }
 
-.blogLink {
+a.blogLink {
     text-align: center;
-    color:  #696969;
+    color:  #2C62DE;
 }
 
-.blogLink :hover {
-    color: #343F3E;
+a.blogLink:hover {
+    color: #2C62DE;
     text-decoration: underline;
 }
 

@@ -13,6 +13,8 @@
         <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
         </label><br>
-        <button class="loginButton form-control hvr-grow hvr-fade" type="submit">Log in</button><br>  
+        <button class="loginButton form-control hvr-grow hvr-fade" type="submit">Log in</button><br>
+        <br>
+        <p style="text-align: center;"><a class="blogLink" href="http://localhost/FinalProject/index.php?controller=pages&action=register">Register to become a contributor</a></p>
     </form>
 </div>

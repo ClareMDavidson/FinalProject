@@ -78,16 +78,17 @@
         </ul>
     </div>
 <div class="dropdown dropdown-dark">
-<button type="button" href="?controller=login&action=login" id="userLoginButton" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown">
+<button type="button" href="?controller=login&action=login" id="userLoginButton" class="btn btn-default btn-lg" data-toggle="dropdown">
     <img style="height: 45px; width: 31px;" src="views/images/lockIcon.png">
     <span class="caret"></span></button>
-  <ul class="dropdown-menu dropdown-menu-right">
+  <ul class="dropdown-menu dropdown-menu-right dropdown-content">
   <?php      
       if (empty($_SESSION['username'])) {       
-        echo '<h3 text-decoration="none" color="#F8FFF4"><li class="loginDropdown"><a class="loginDropdown" href="?controller=pages&action=login">Blog Owner Login</a></li></h3>';
+        echo '<h3 style="text-align: center" text-decoration="none" color="#F8FFF4"><li class="loginDropdown"><a style="text-align: center" class="loginDropdown" href="?controller=pages&action=login">Log In</a></li></h3>';
+        echo '<h3 style="text-align: center" text-decoration="none" color="#F8FFF4"><li class="loginDropdown"><a style="text-align: center" class="loginDropdown" href="?controller=pages&action=register">Register as contributor</a></li></h3>';
       }
       else if (!empty ($_SESSION['username'])) {
-          echo '<h3 text-decoration="none" color="#F8FFF4"><li class="loginDropdown"><a class="loginDropdown" href="?controller=pages&action=logout">Blog Owner Log out</a></li></h3>';
+          echo '<h3 text-decoration="none" color="#F8FFF4"><li class="loginDropdown"><a style="text-align: center" class="loginDropdown" href="?controller=pages&action=logout">Log Out</a></li></h3>';
       }
     ?>
   </ul>
@@ -142,3 +143,5 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
