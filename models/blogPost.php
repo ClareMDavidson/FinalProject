@@ -38,6 +38,17 @@
                    $comment = new Comment($results ['commentPostID']);
                    array_push($this->comments, $comment);
                 }
+                $this->blogPostID = $pdo->lastInsertId();
+                $pdo = DB::getInstance();
+                $stmt2 = $pdo->prepare("INSERT INTO reaction(blogPostID, liked, loved, wowed, angered) VALUES (:blogPostID, :liked, :loved, :wowed, :angered;)");
+                $stmt2->execute(array(
+                "blogPostID" => $this->blogPostID,
+                "liked" => 0,
+                "loved" => 0,
+                "wowed" => 0,
+                "angered" => 0,
+                    ));
+                return true;
             }
         }catch (Exception $ex) {
             echo $ex->getMessage().PHP_EOL;
