@@ -19,7 +19,18 @@
         </p>
         <p><b><?php echo "Posted on: ".$posts->getDate(); ?></b></p>
         <p id="keywords"><?php echo "Keywords: ";
-        echo implode(', ', $posts->getKeywords());?></p>
+        //echo implode(', ', $blogPost->getKeywords());
+        $loop=0;
+        $numberOfKeywords=count($posts->getKeywords());
+        foreach($posts->getKeywords() as $keyword){
+            $loop++;?>
+            <a href="index.php?controller=search&action=view&keyword=<?php echo $keyword;?>">
+                <?php echo $keyword;
+                if($loop != $numberOfKeywords){
+                    echo ", ";
+                }?>
+            </a><?php
+        }?>
             <hr id="style1">
             <?php
     }?> 
