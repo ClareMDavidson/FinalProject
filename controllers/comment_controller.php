@@ -38,7 +38,13 @@ class commentController {
         filter_input(INPUT_GET, 'blogPostID', FILTER_SANITIZE_NUMBER_INT);
         $comment = new Comment($commentPostID);
         if ($comment->alterScore($commentPostID, $scoreChange)){
-            header("Location: index.php?controller=blogPost&action=view&blogPostID=". $_GET['blogPostID']. "#comment". $_GET['commentPostID']);
+            //header("Location: index.php?controller=blogPost&action=view&blogPostID=". $_GET['blogPostID']. "#comment". $_GET['commentPostID']);
+            ?>
+            <script>
+                window.location.replace("index.php?controller=blogPost&action=view&blogPostID=<?php echo $_GET['blogPostID']. "#comment". $_GET['commentPostID'];?>");
+            </script>
+            <?php
+            
         }
         else {
             require_once('views/pages/error.php');
@@ -71,7 +77,12 @@ class commentController {
         $commentPostID = filter_input(INPUT_POST, 'commentPostID',FILTER_SANITIZE_STRING);
         $comment = new Comment($commentPostID);
         $comment->moderate($decision);
-        header("Location: index.php?controller=comment&action=viewUnapproved");
+        //header("Location: index.php?controller=comment&action=viewUnapproved");
+        ?>
+            <script>
+                window.location.replace("index.php?controller=comment&action=viewUnapproved");
+            </script>
+        <?php
     }
         
         
