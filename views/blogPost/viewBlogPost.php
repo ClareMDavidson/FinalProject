@@ -21,19 +21,6 @@
 </div>
 <div class="sharethis-inline-share-buttons" id="socialmedia"></div>
 <br />
-<div class="col-sm-12" id="reactionbar" style="height:auto; margin: 0 auto; text-align: center">
-<?php foreach($blogPost->getReactions() as $reaction){
-echo '<h2 id="likeCount"style="display:inline">'. $reaction->getLikes() . '</h2>'; ?>
-<a href="index.php?controller=reaction&action=addLike&=plus&reactionPostID=<?php echo $reaction->getReactionPostID();?>&blogPostID=<?php echo $blogPost->getID();?>" name="comment<?php echo $reaction->getReactionPostID();?>"> 
-<?php echo '<img id="like" style="height: 40px; width: auto; display:inline;" src="views/images/like.png" alt="like"/></a>';
-echo '<h2 id="loveCount" style="display:inline">'. $reaction->getLoves() . '</h2>';
-echo '<img id="love" style="height: 40px; width: auto; display:inline;" src="views/images/love.png" alt="love"/>';
-echo '<h2 id="wowCount" style="display:inline">' . $reaction->getWows() . '</h2>';
-echo '<img id="wow" style="height: 40px; width: auto; display:inline;" src="views/images/wow.png" alt="wow"/>';
-echo '<h2 id="angerCount" style="display: inline">' . $reaction->getAngers() . '</h2>';
-echo '<img id="anger" style="height: 40px; width: auto; display:inline" src="views/images/anger.png" alt="anger"/>';
- }?> 
-     </div>
 <hr id="style1">
 <p><b>Comments:</b></p> 
 <?php
