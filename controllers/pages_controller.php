@@ -1,5 +1,6 @@
 <?php
 include 'models/bloggerLogin.php';
+include 'models/register.php';
 
 class PagesController {
    
@@ -43,8 +44,12 @@ class PagesController {
     }
     
     public function register() {
-        require_once('views/pages/registration.php');
+        if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+            require_once('views/pages/registration.php');            
+        }
+        else {
+            Register::registerContributor();   
+        
+        }
     }
-
-
 }
