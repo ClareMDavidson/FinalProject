@@ -6,7 +6,6 @@
     private $date;
     private $keywords=array();
     private $comments=array();
-    private $reactions=array();
 
     public function __construct($blogPostID=NULL) {
         try {
@@ -43,15 +42,7 @@
         }catch (Exception $ex) {
             echo $ex->getMessage().PHP_EOL;
         }
-                                        require_once("models/reaction.php");
-                $pdo = DB::getInstance();
-                $stmt = $pdo->prepare("SELECT reactionPostID from reaction "
-                        . "WHERE blogPostID = :blogPostID;");
-                $stmt->execute (["blogPostID"=>$blogPostID]);
-                while ($results = $stmt->fetch()){
-                $reactions = new Reaction($results ['reactionPostID']);
-                array_push($this->reactions, $reactions);
-    }}
+    }
     
     public function create($title, $content, $keywords){
         try {
@@ -68,7 +59,7 @@
                 //"keywords" => $this->keywords
                 ));
             $this->blogPostID = $pdo->lastInsertId();
-             $stmt = $pdo->prepare("INSERT IGNORE INTO keyword(keyword) VALUES (:keyword)");
+            $stmt = $pdo->prepare("INSERT IGNORE INTO keyword(keyword) VALUES (:keyword)");
             foreach($this->keywords as $keyword){
                 $stmt->execute(array("keyword" =>$keyword));  
             }
@@ -80,15 +71,6 @@
                 $keywordID= $keywordResult['keywordID'];
                 $keywordstmt->execute(array("blogPostID" => $this->blogPostID, "keywordID" => $keywordID,));
             }
-            $pdo = DB::getInstance();
-            $stmt2 = $pdo->prepare("INSERT INTO reaction(blogPostID, liked, loved, wowed, angered) VALUES (:blogPostID, :liked, :loved, :wowed, :angered;)");
-            $stmt2->execute(array(
-            "blogPostID" => $this->blogPostID,
-            "liked" => 0,
-            "loved" => 0,
-            "wowed" => 0,
-            "angered" => 0,
-                ));
             return true;
         }catch (Exception $ex) {
             echo $ex->getMessage().PHP_EOL;
@@ -139,8 +121,4 @@
         { 
             return $this->comments;
         }  
-    public function getReactions()
-    {
-        return $this->reactions;
-    } 
   }
