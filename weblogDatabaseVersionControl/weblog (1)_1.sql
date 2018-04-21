@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 19, 2018 at 05:50 PM
+-- Generation Time: Apr 19, 2018 at 07:31 AM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.2.0
 
@@ -64,23 +64,21 @@ CREATE TABLE `comment` (
   `content` text NOT NULL,
   `timeCommented` time NOT NULL,
   `dateCommented` date NOT NULL,
-  `commentScore` int(11) NOT NULL DEFAULT '0',
-  `approved` varchar(5) DEFAULT NULL
+  `commentScore` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `comment`
 --
 
-INSERT INTO `comment` (`commentPostID`, `blogPostID`, `username`, `userEmail`, `content`, `timeCommented`, `dateCommented`, `commentScore`, `approved`) VALUES
-(1, 1, 'JabbaHutt', 'jabbahutt@starwars.com', 'Hi I\'m not sure if this is a prank or not but are you ok?', '12:43:00', '2018-01-10', 0, 'Yes'),
-(2, 1, 'Harry22', 'Harry22@gmail.com', 'haha wow this is weird', '14:44:00', '2018-01-10', 0, 'Yes'),
-(3, 1, 'TheBexter', 'becky@gmail.com', 'Seriously sounds like a rat or a pigeon trapped in your wall. I would recommend getting a pest control person round because if they die in a wall cavity it can cause a v. strong smell that doesn\'t go away. Trust me!!!', '09:45:00', '2018-01-11', 1, 'Yes'),
-(5, 2, 'TheBexter', 'becky@gmail.com', 'Ok this definitely sounds like something weird is going on. Someone has got to be messing with you. I\'m so sorry it actually sounds quite traumatic but you\'ve got to think rationally about it- have you got any weird exes or have you pissed anyone off? There\'s got to be an explanation for this stuff.', '12:49:00', '2018-01-12', 0, 'Yes'),
-(6, 2, 'Ghorgon', 'joe@medusa.co.uk', 'Do you live in the new flats in the old asylum? You said converted hospital but I defo recognise that photo, it\'s the old lunatic asylum. If I were you I\'d start flat shopping because that place is fucking terrifying!', '15:22:00', '2018-01-13', 0, 'Yes'),
-(7, 2, 'Pawnstar99', 'john.smith@google.com', 'haha your fkd mate. wtf!! I\'d be sleeping somewere else if i were u! not rite.', '19:30:00', '2018-01-13', 0, NULL),
-(8, 2, 'MaryBarry', 'mary.barry@gmail.com', 'Ok so I know this sounds weird but have you tried shining a uv light on the wall? maybe it\'s an old stain that shows up in certain light? just a thought. Keep posting about this because it sounds crazy, hope you\'re okay!', '11:08:00', '2018-01-14', 1, NULL),
-(11, 8, 'test', 'test@test.com', 'I am a test comment. Feel free to delete me by not approving me, when you are testing comment moderating.', '16:45:00', '2018-04-19', 0, NULL);
+INSERT INTO `comment` (`commentPostID`, `blogPostID`, `username`, `userEmail`, `content`, `timeCommented`, `dateCommented`, `commentScore`) VALUES
+(1, 1, 'JabbaHutt', 'jabbahutt@starwars.com', 'Hi I\'m not sure if this is a prank or not but are you ok?', '12:43:00', '2018-01-10', 0),
+(2, 1, 'Harry22', 'Harry22@gmail.com', 'haha wow this is weird', '14:44:00', '2018-01-10', 0),
+(3, 1, 'TheBexter', 'becky@gmail.com', 'Seriously sounds like a rat or a pigeon trapped in your wall. I would recommend getting a pest control person round because if they die in a wall cavity it can cause a v. strong smell that doesn\'t go away. Trust me!!!', '09:45:00', '2018-01-11', 1),
+(5, 2, 'TheBexter', 'becky@gmail.com', 'Ok this definitely sounds like something weird is going on. Someone has got to be messing with you. I\'m so sorry it actually sounds quite traumatic but you\'ve got to think rationally about it- have you got any weird exes or have you pissed anyone off? There\'s got to be an explanation for this stuff.', '12:49:00', '2018-01-12', 0),
+(6, 2, 'Ghorgon', 'joe@medusa.co.uk', 'Do you live in the new flats in the old asylum? You said converted hospital but I defo recognise that photo, it\'s the old lunatic asylum. If I were you I\'d start flat shopping because that place is fucking terrifying!', '15:22:00', '2018-01-13', 0),
+(7, 2, 'Pawnstar99', 'john.smith@google.com', 'haha your fkd mate. wtf!! I\'d be sleeping somewere else if i were u! not rite.', '19:30:00', '2018-01-13', 0),
+(8, 2, 'MaryBarry', 'mary.barry@gmail.com', 'Ok so I know this sounds weird but have you tried shining a uv light on the wall? maybe it\'s an old stain that shows up in certain light? just a thought. Keep posting about this because it sounds crazy, hope you\'re okay!', '11:08:00', '2018-01-14', 1);
 
 --
 -- Indexes for dumped tables
@@ -113,7 +111,7 @@ ALTER TABLE `blogPost`
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `commentPostID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `commentPostID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables

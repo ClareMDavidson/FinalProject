@@ -2,23 +2,25 @@
     <h2><?php echo $blogPost->getTitle();?></h2>
     <p><b><?php echo "Posted on: ". $blogPost->getDate(); ?></b></p>
     <p><?php echo $blogPost->getContent(); ?></p>
-    <p id="keywords"><?php echo "Keywords: ".$blogPost->getKeywords(); ?></b></p>
+    <p id="keywords">Keywords:
+    <?php
+        //echo implode(', ', $blogPost->getKeywords());
+        $loop=0;
+        $numberOfKeywords=count($blogPost->getKeywords());
+        foreach($blogPost->getKeywords() as $keyword){
+            $loop++;?>
+            <a href="index.php?controller=search&action=view&keyword=<?php echo $keyword;?>">
+                <?php echo $keyword;
+                if($loop != $numberOfKeywords){
+                    echo ", ";
+                }?>
+            </a><?php
+        }?>
+    </p>
+            
 </div>
 <div class="sharethis-inline-share-buttons" id="socialmedia"></div>
 <br />
-<div class="col-sm-12" id="reactionbar" style="height:auto; margin: 0 auto; text-align: center">
-<?php foreach($blogPost->getReactions() as $reaction){
-echo '<h2 id="likeCount"style="display:inline">'. $reaction->getLikes() . '</h2>'; ?>
-<a href="index.php?controller=reaction&action=addLike&=plus&reactionPostID=<?php echo $reaction->getReactionPostID();?>&blogPostID=<?php echo $blogPost->getID();?>" name="comment<?php echo $reaction->getReactionPostID();?>"> 
-<?php echo '<img id="like" style="height: 40px; width: auto; display:inline;" src="views/images/like.png" alt="like"/></a>';
-echo '<h2 id="loveCount" style="display:inline">'. $reaction->getLoves() . '</h2>';
-echo '<img id="love" style="height: 40px; width: auto; display:inline;" src="views/images/love.png" alt="love"/>';
-echo '<h2 id="wowCount" style="display:inline">' . $reaction->getWows() . '</h2>';
-echo '<img id="wow" style="height: 40px; width: auto; display:inline;" src="views/images/wow.png" alt="wow"/>';
-echo '<h2 id="angerCount" style="display: inline">' . $reaction->getAngers() . '</h2>';
-echo '<img id="anger" style="height: 40px; width: auto; display:inline" src="views/images/anger.png" alt="anger"/>';
- }?> 
-     </div>
 <hr id="style1">
 <p><b>Comments:</b></p> 
 <?php
@@ -52,4 +54,3 @@ echo '<img id="anger" style="height: 40px; width: auto; display:inline" src="vie
         <button class="loginButton form-control hvr-fade" type="submit" name="Submit">Submit</button>
 </form>
     </div>
-
