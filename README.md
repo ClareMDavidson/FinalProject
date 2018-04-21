@@ -11,6 +11,9 @@ GRANT SELECT on keyword to blogger@localhost;
 GRANT INSERT on keyword to blogger@localhost;
 GRANT SELECT on blogPostkeyword to blogger@localhost;
 GRANT INSERT on blogPostkeyword to blogger@localhost;
+GRANT SELECT on reaction to blogger@localhost;
+GRANT INSERT on reaction to blogger@localhost;
+GRANT UPDATE on reaction to blogger@localhost;
 
 SHOW GRANTS FOR blogger@localhost;
 
