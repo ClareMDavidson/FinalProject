@@ -30,7 +30,8 @@ $controllers = array('pages' => ['home', 'error', 'login', 'logout', 'contactUs'
                     'blogPost' => ['write', 'save', 'view'],
                     'comment'=>['writeComment', 'saveComment', 'viewComment', 'alterScore', 'moderate', 'viewUnapproved'],
                     'image' => ['upload', 'save'],
-                    'controllerXXX' => ['actionYYY', 'actionZZZ'],
+                    'search' => ['view'],
+                    'reaction' => ['addReaction'],
                     );
 
   // check that the requested controller and action are both allowed

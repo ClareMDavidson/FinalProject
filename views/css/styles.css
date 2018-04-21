@@ -362,3 +362,33 @@ div.moderate{
     margin-left: 5%;
 }
 
+ul.wordCloud {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    display: inline;
+    margin-bottom: 100px;
+}
+
+ul.wordCloud li {
+    margin: 0px;
+    padding: 8px;    
+    display: inline;
+}
+/*div.col-sm-2 {
+    width: 100%;
+}*/
+div.wordcloud {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    padding-right: 12px;
+}
+
+h2.reactions {
+    float: right;
+    align-content: right;
+}
+
+h2.reactions img {
+    width: 7%;
+}
