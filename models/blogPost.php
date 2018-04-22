@@ -12,6 +12,7 @@
     private $comments=array();
 
     public function __construct($blogPostID=NULL) {
+        require_once('models/comment.php');
         try {
             if ($blogPostID!=NULL){
                 //Gayathri you will need to complete the constructor

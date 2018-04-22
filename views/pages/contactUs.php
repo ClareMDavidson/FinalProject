@@ -1,6 +1,6 @@
 <form action="">
 
- <h3>Please leave your query, we will get back to you as soon as we can, Thank you</h3>
+ <h1>Please leave your message and I'll get back to you as soon as I can- thanks!</h1>
     
   First name:<br>
   <input type="text" name="firstname" value="">
@@ -16,6 +16,7 @@
   
   <input type="submit" value="Submit">
 </form> 
+<br>
  <h4>To find Us</h4>
 
 Address: The Blvd, Leeds LS10 1PZ <br>

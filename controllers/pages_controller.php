@@ -53,4 +53,8 @@ class PagesController {
         
         }
     }
+    
+    public function about(){
+        require_once('views/pages/about.php');
+    }
 }
