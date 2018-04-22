@@ -15,7 +15,11 @@ class bloggerLogin {
             if ($row) {
                 $_SESSION["username"] = $filteredUsername;
                 $_SESSION["userID"] = $row["users_id"];
-                require_once('views/blogPost/createBlogPost.php');
+                ?>
+                <script>
+                    window.location.replace("index.php?controller=blogPost&action=write");
+                </script>
+                <?php
             } else {
                 require_once ('views/pages/login.php');
                 echo '<script>alert("Invalid Username and/or Password. Please try again.")</script>';
