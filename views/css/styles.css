@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Amatic+SC|Montserrat|Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Special+Elite|Montserrat|Open+Sans);
 
 #banner{
         font-family: 'Amatic SC', cursive;
@@ -10,13 +10,13 @@
 .navbar{
         color: #F8FFF4;
         border-radius: 5px;
-        background: #343F3E;
+        background-color: #1B1E16;
         text-align: center;
         
 }
 .nav-item{
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 40px;
+    padding-right: 40px;
     padding-top: 0px;
     padding-bottom: 0px;
     text-align: center;
@@ -32,28 +32,25 @@ a:hover {
     color: #FFFFFF;
     text-decoration: none;
 }
-img {
-    width: 100%;
-    height: auto;
-}
+
 .dropdown-menu  {
     color:#F8FFF4;
-    background-color: #343a40;
+    background-color: #1B1E16;
     right: 0px !important;
     left: auto !important;
     text-decoration: none !important;
 }
  .container-fluid{
-      width: 105%
+      width: 100%
  }
 #postContainer{
     color:#2E2C2F;
-    background-color: #FFFFFF;
+    background-color: #E8E4C7;
     border-radius: 5px;
     padding: 5px;
 }
 #sideWidgetBar{
-    background-color: #343a40;
+    background-color: #1B1E16;
     color: #F8FFF4;
     border-radius: 5px;
     text-align: center;
@@ -62,8 +59,8 @@ img {
     padding-right: 5px;
    }
 h1{
-        font-size: 5vw;
-        font-family: 'Amatic SC', cursive;
+        font-size: 3vw;
+        font-family: 'Special Elite', cursive;
         color: #2E2C2F;   
 }
 h2{
@@ -96,7 +93,7 @@ body{
         font-size: 1vw;
         font-family: 'Open Sans', sans-serif;
         color: #2E2C2F;
-        background-color:#D0E3C4;
+        background-color:black;
 }
 
 #footbannner{
@@ -297,7 +294,7 @@ div.blogPost img {
 }
 
 .dropdown .dropbtn {
-    font-size: 16px;    
+    font-size: 1.6vw;    
     border: none;
     outline: none;
     color: white;
@@ -319,7 +316,7 @@ div.blogPost img {
 .dropdown-content a {
     float: none;
     color: black;
-    padding: 12px 16px;
+    padding: 20%;
     text-decoration: none;
     display: block;
     text-align: left;
@@ -361,6 +358,7 @@ button.markup{
 div.moderate{
     margin-left: 5%;
 }
+
 
 ul.wordCloud {
     list-style-type: none;

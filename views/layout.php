@@ -1,85 +1,90 @@
-<!--  this is the title banner-->
-<div class='container-fluid'>
-    <div class="col-sm-12">
-        <div id='banner'>
-            <h1 text-decoration="none" color="#2E2C2F"><a id="banner" href='?controller=pages&action=home'>The Final Project</a></h1>
-        </div>
-    </div>
-</div>
-<!--title banner ends and navbar begins-->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler1" aria-controls="#navbarToggler1" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+      
+<a href="http://localhost/FinalProject/index.php"><img class="col-sm-12" style="height:auto; width:100%; align:center; margin:0;" src="views/images/creepyheaderfinal3.png"/></a>
+
+  <nav class="navbar navbar-expand-lg" style="background-color:#1B1E16;">
+    
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler1" aria-controls="#navbarToggler1" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
 <!--   this toggles the navbar -->
     <div class="collapse navbar-collapse" id="navbarToggler1">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0"> 
 <!--            <h2 text-decoration="none" color="#F8FFF4">
                 <li class="nav-item"><a class="nav-link" href='?controller=pages&action=about'>About</a></li></h2>-->
-            <h2 text-decoration="none" color="#F8FFF4">
-                <li class="nav-item"><a class="nav-link" href='?controller=pages&action=home'>Recent Posts</a></li>
-            </h2>
+          
+<li class="nav-item"><a class="nav-link" href='?controller=pages&action=home'><h1 style="color:#F8FFF4"> Recent Posts</h1></a></li>
 <!--            <h2 text-decoration="none" color="#F8FFF4">
                 <li class="nav-item"><a class="nav-link" href='#'>Archive</a></li></h2>-->
 
                 <!--<li class="nav-item"><a class="nav-link" href='?controller=pages&action=about'>About</a></li></h2>-->
 <!--            <h2 text-decoration="none" color="#F8FFF4">
                 <li class="nav-item"><a class="nav-link" href='#'>Recent Posts</a></li></h2>-->
-            <div class="dropdown" >
-                <h2 text-decoration="none" color="#F8FFF4">
-                    <li class="nav-item"><a class="nav-link" href="#">Archive</a></li>
-                </h2>
-                <div class="dropdown-content">
-                    <a href="?controller=pages&action=archive&month=April" id="04">April 2018</a>
-                    <a href="?controller=pages&action=archive&month=March" id="03">March 2018</a>
-                    <a href="?controller=pages&action=archive&month=February" id="02">February 2018</a>
-                    <a href="?controller=pages&action=archive&month=January" id="01">January 2018</a>
-                    <a href="?controller=pages&action=archive&month=December" id="12">December 2017</a>
-                    <a href="?controller=pages&action=archive&month=November" id="11">November 2017</a>
-                    <a href="?controller=pages&action=archive&month=October" id="10">October 2017</a>
-                    <a href="?controller=pages&action=archive&month=September" id="09">September 2017</a>
-                    <a href="?controller=pages&action=archive&month=August" id="08">August 2017</a>
-                    <a href="?controller=pages&action=archive&month=July" id="07">July 2017</a>
-                    <a href="?controller=pages&action=archive&month=June" id="06">June 2017</a>
-                    <a href="?controller=pages&action=archive&month=May" id="05">May 2017</a>   
+
+                <div class="dropdown" >
+                
+                    <li class="nav-item"><a class="nav-link" href="#">
+                            <h1 style="color:#F8FFF4">Archive</h1></a></li>
+                
+                    <div class="dropdown-content">
+                        <a href="?controller=pages&action=archive&month=April" id="04">April 2018</a>
+                        <a href="?controller=pages&action=archive&month=March" id="03">March 2018</a>
+                        <a href="?controller=pages&action=archive&month=February" id="02">February 2018</a>
+                        <a href="?controller=pages&action=archive&month=January" id="01">January 2018</a>
+                        <a href="?controller=pages&action=archive&month=December" id="12">December 2017</a>
+                        <a href="?controller=pages&action=archive&month=November" id="11">November 2017</a>
+                        <a href="?controller=pages&action=archive&month=October" id="10">October 2017</a>
+                        <a href="?controller=pages&action=archive&month=September" id="09">September 2017</a>
+                        <a href="?controller=pages&action=archive&month=August" id="08">August 2017</a>
+                        <a href="?controller=pages&action=archive&month=July" id="07">July 2017</a>
+                        <a href="?controller=pages&action=archive&month=June" id="06">June 2017</a>
+                        <a href="?controller=pages&action=archive&month=May" id="05">May 2017</a>   
+                    </div>
                 </div>
-            </div>
-            <h2 text-decoration="none" color="#F8FFF4">
-                <li class="nav-item"><a class="nav-link" href='?controller=pages&action=contactUs'>Get in Touch</a></li></h2>
-            <h2 text-decoration="none" color="#F8FFF4">
-                <li class="nav-item"><a class="nav-link" href='?controller=blogPost&action=write'>
-                    <?php
-                        if (empty($_SESSION)){
-                            echo "";
-                        }
-                        if(!empty($_SESSION)){
-                            echo "New Blog Post";
-                    }?>
-                    </a>
-                </li>
-            </h2>
-            <h2 text-decoration="none" color="#F8FFF4">
-                <li class="nav-item">
-                    <a class="nav-link" href='?controller=comment&action=viewUnapproved'>
-                        <?php
-                            if(empty($_SESSION)){
-                                echo "";
-                            }
-                            elseif(!empty($_SESSION)){
-                                require_once('models/commentList.php');
-                                require_once('models/comment.php');
-                                $commentList = new CommentList();
-                                echo "Moderate Comments (". count($commentList->getCommentList()). ")";
-                            }?>
-                    </a>
-                </li>
-            </h2>
+
+            
+
+            <?php 
+            if (empty($_SESSION)){
+                echo "<li class='nav-item'><a class='nav-link' href='?controller=pages&action=contactUs'><h1 style='color:#F8FFF4'>Get in Touch</h1></a></li>";
+            }
+            if (!empty($_SESSION)){
+                echo "";
+                }?>
+            
+                
+                    <?php          
+                   
+            if (empty($_SESSION)){
+              echo "";
+            }
+            
+            if(!empty($_SESSION)){
+                echo "<li class='nav-item'><a class='nav-link' href='?controller=blogPost&action=write'>
+                        <h1 style='color:#F8FFF4'>New Blog Post</h1></a></li>";
+            }   
+            ?>
+            
+                    <?php          
+                   
+            if (empty($_SESSION)){
+              echo "";
+            }
+            if(!empty($_SESSION)){
+                require_once('models/commentList.php');
+                require_once('models/comment.php');
+                $commentList = new CommentList();
+                echo "<li class='nav-item'><a class='nav-link' href='?controller=comment&action=viewUnapproved'><h1 style='color:#F8FFF4'>Moderate Comments (". count($commentList->getCommentList()). ")" . "</h1></a></li>";
+            }   
+
+            ?>
 <!--            this is the create post navbar link that should hopefully only appear when the blog owner is logged in-->
         </ul>
-    </div>
+  </div>
 <div class="dropdown dropdown-dark">
 <button type="button" href="?controller=login&action=login" id="userLoginButton" class="btn btn-default btn-lg" data-toggle="dropdown">
     <img style="height: 45px; width: 31px;" src="views/images/lockIcon.png">
+
     <span class="caret"></span></button>
   <ul class="dropdown-menu dropdown-menu-right dropdown-content">
   <?php      
@@ -89,6 +94,7 @@
       }
       else if (!empty ($_SESSION['username'])) {
           echo '<h3 text-decoration="none" color="#F8FFF4"><li class="loginDropdown"><a style="text-align: center" class="loginDropdown" href="?controller=pages&action=logout">Log Out</a></li></h3>';
+
       }
     ?>
   </ul>
