@@ -4,7 +4,7 @@
   <nav class="navbar navbar-expand-lg" style="background-color:#1B1E16;">
     
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler1" aria-controls="#navbarToggler1" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"><img style="height:auto; width:100%" src='views/images/hamburger.png' alt='menu icon'/></span>
   </button>
 
 <!--   this toggles the navbar -->
@@ -13,7 +13,7 @@
 <!--            <h2 text-decoration="none" color="#F8FFF4">
                 <li class="nav-item"><a class="nav-link" href='?controller=pages&action=about'>About</a></li></h2>-->
           
-<li class="nav-item"><a class="nav-link" href='?controller=pages&action=home'><h1 style="color:#F8FFF4"> Recent Posts</h1></a></li>
+<li class="nav-item"><a class="nav-link" href='?controller=pages&action=home'><h1 style="color:#F8FFF4;"> Recent Posts</h1></a></li>
 <!--            <h2 text-decoration="none" color="#F8FFF4">
                 <li class="nav-item"><a class="nav-link" href='#'>Archive</a></li></h2>-->
 
@@ -27,18 +27,18 @@
                             <h1 style="color:#F8FFF4">Archive</h1></a></li>
                 
                     <div class="dropdown-content">
-                        <a href="?controller=pages&action=archive&month=April" id="04">April 2018</a>
-                        <a href="?controller=pages&action=archive&month=March" id="03">March 2018</a>
-                        <a href="?controller=pages&action=archive&month=February" id="02">February 2018</a>
-                        <a href="?controller=pages&action=archive&month=January" id="01">January 2018</a>
-                        <a href="?controller=pages&action=archive&month=December" id="12">December 2017</a>
+                        <a href="?controller=pages&action=archive&month=April" id="04"><h1 style="font-size:1.5vw;color:#F8FFF4">Apr-18</h1></a>
+                        <a href="?controller=pages&action=archive&month=March" id="03"><h1 style="font-size:1.5vw;color:#F8FFF4">Mar-18</h1></a>
+                        <a href="?controller=pages&action=archive&month=February" id="02"><h1 style="font-size:1.5vw;color:#F8FFF4">Feb-18</h1></a>
+                        <a href="?controller=pages&action=archive&month=January" id="01"><h1 style="font-size:1.5vw;color:#F8FFF4">Jan-18</h1></a>
+<!--                        <a href="?controller=pages&action=archive&month=December" id="12">December 2017</a>
                         <a href="?controller=pages&action=archive&month=November" id="11">November 2017</a>
                         <a href="?controller=pages&action=archive&month=October" id="10">October 2017</a>
                         <a href="?controller=pages&action=archive&month=September" id="09">September 2017</a>
                         <a href="?controller=pages&action=archive&month=August" id="08">August 2017</a>
                         <a href="?controller=pages&action=archive&month=July" id="07">July 2017</a>
                         <a href="?controller=pages&action=archive&month=June" id="06">June 2017</a>
-                        <a href="?controller=pages&action=archive&month=May" id="05">May 2017</a>   
+                        <a href="?controller=pages&action=archive&month=May" id="05">May 2017</a>   -->
                     </div>
                 </div>
 
@@ -51,7 +51,13 @@
             if (!empty($_SESSION)){
                 echo "";
                 }?>
-            
+            <?php 
+            if (empty($_SESSION)){
+                echo "<li class='nav-item'><a class='nav-link' href='?controller=pages&action=about'><h1 style='color:#F8FFF4'>About</h1></a></li>";
+            }
+            if (!empty($_SESSION)){
+                echo "";
+                }?>            
                 
                     <?php          
                    
@@ -82,18 +88,18 @@
         </ul>
   </div>
 <div class="dropdown dropdown-dark">
-<button type="button" href="?controller=login&action=login" id="userLoginButton" class="btn btn-default btn-lg" data-toggle="dropdown">
-    <img style="height: 45px; width: 31px;" src="views/images/lockIcon.png">
+<button type="button" href="?controller=login&action=login" id="userLoginButton" class="btn" data-toggle="dropdown">
+    <img style="height: auto; width: 75%;" src="views/images/lockIcon.png">
 
     <span class="caret"></span></button>
   <ul class="dropdown-menu dropdown-menu-right dropdown-content">
   <?php      
       if (empty($_SESSION['username'])) {       
-        echo '<h3 style="text-align: center" text-decoration="none" color="#F8FFF4"><li class="loginDropdown"><a style="text-align: center" class="loginDropdown" href="?controller=pages&action=login">Log In</a></li></h3>';
-        echo '<h3 style="text-align: center" text-decoration="none" color="#F8FFF4"><li class="loginDropdown"><a style="text-align: center" class="loginDropdown" href="?controller=pages&action=register">Register as contributor</a></li></h3>';
+        echo '<li class="loginDropdown"><a style="text-align: center" class="loginDropdown" href="?controller=pages&action=login"><h1 style="font-size:1.5vw;color:#F8FFF4">Log In</h1></a></li>';
+        echo '<li class="loginDropdown"><a style="text-align: center" class="loginDropdown" href="?controller=pages&action=register"><h1 style="font-size:1.5vw;color:#F8FFF4">Register to contribute</h1></a></li>';
       }
       else if (!empty ($_SESSION['username'])) {
-          echo '<h3 text-decoration="none" color="#F8FFF4"><li class="loginDropdown"><a style="text-align: center" class="loginDropdown" href="?controller=pages&action=logout">Log Out</a></li></h3>';
+          echo '<li class="loginDropdown"><a style="text-align: center" class="loginDropdown" href="?controller=pages&action=logout"><h1 style="font-size:1.5vw;color:#F8FFF4">Log Out</h1></a></li>';
 
       }
     ?>

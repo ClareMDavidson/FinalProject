@@ -1,12 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Special+Elite|Montserrat|Open+Sans);
 
-#banner{
-        font-family: 'Amatic SC', cursive;
-        color: #2E2C2F;
-        background-color: #D0E3C4;
-        text-align: center;
-       
-}
 .navbar{
         color: #F8FFF4;
         border-radius: 5px;
@@ -14,12 +7,26 @@
         text-align: center;
         
 }
+#userLoginButton{
+    max-height:5vw;
+    max-width:5vw;
+    border-radius:5px;
+    background-color:#F8FFF4;
+    padding:10px;
+}
 .nav-item{
     padding-left: 40px;
     padding-right: 40px;
-    padding-top: 0px;
+    padding-top: 10px;
     padding-bottom: 0px;
     text-align: center;
+}
+.nav-item:hover{
+    color:#7bb897;
+}
+.navbar-toggler-icon{
+    color:#F8FFF4;
+    background-color:#F8FF4;
 }
 .loginDropdown{
     text-align:center;
@@ -38,7 +45,7 @@ a:hover {
     background-color: #1B1E16;
     right: 0px !important;
     left: auto !important;
-    text-decoration: none !important;
+    
 }
  .container-fluid{
       width: 100%
@@ -59,13 +66,14 @@ a:hover {
     padding-right: 5px;
    }
 h1{
-        font-size: 3vw;
+        font-size: 2.5vw;
         font-family: 'Special Elite', cursive;
-        color: #2E2C2F;   
+        color: #2E2C2F;
+        text-align :center;
 }
 h2{
         font-size: 2vw;
-        font-family: 'Montserrat', sans-serif;
+        font-family: 'Special Elite', cursive;
         text-align: center;
 }
 h3{
@@ -83,7 +91,11 @@ h5{
     font-family: 'Open Sans', sans-serif;
     margin-left: 5%;
 }
-
+h6{
+    font-size: 1.25vw;
+    font-family: 'Special Elite', cursive;
+    text-align: center;
+}
 p{
         font-size: 1vw;
         font-family: 'Open Sans', sans-serif;
@@ -192,7 +204,8 @@ input{
     background-color: #D0E3C4;
     color: black;
     align-content: center;
-    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom:5px;
 }
 
 .loginStyle {
@@ -232,7 +245,7 @@ input{
   transition-property: color, background-color;
 }
 .hvr-fade:hover, .hvr-fade:focus, .hvr-fade:active {
-  background-color: #343F3E;
+  background-color: #1B1E16;
   color: white;
 }
 
@@ -307,7 +320,8 @@ div.blogPost img {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    border-radius: 5px;
+    background-color: #1B1E16;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -315,15 +329,17 @@ div.blogPost img {
 
 .dropdown-content a {
     float: none;
-    color: black;
-    padding: 20%;
+    border-radius: 5px;
+    background-color: #1B1E16;
+    color: #2E2C2F;
+    padding: 10%;
     text-decoration: none;
     display: block;
     text-align: left;
 }
 
 .dropdown-content a:hover {
-    background-color: #ddd;
+    background-color: #1d4e30;
 }
 
 .dropdown:hover .dropdown-content {
@@ -336,14 +352,15 @@ a.blogLink {
 }
 
 a.blogLink:hover {
-    color: #2C62DE;
+    color: #7bb897;
     text-decoration: underline;
 }
 
 .archiveTitle {
     text-decoration: underline overline;
     text-align: center;
-    background: #343F3E;
+    background: #1B1E16;
+    border-radius: 5px;
     color: white;
 }
 
@@ -389,4 +406,22 @@ h2.reactions {
 
 h2.reactions img {
     width: 7%;
+}
+a:link {
+    color: #01BF4A;
+}
+
+
+a:visited {
+    color: #133819;
+}
+
+
+a:hover {
+    color: #7bb897;
+}
+
+
+a:active {
+    color: #133819;
 }

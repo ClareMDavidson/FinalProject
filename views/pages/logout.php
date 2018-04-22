@@ -2,10 +2,10 @@
 <?php
 
 if (empty($_SESSION)) {
-    echo '<h2>You have now been logged out</h2>';
+    echo '<h1>You have now been logged out</h1>';
     
 }
  else {
-    echo 'You are still still logged in';
+    echo '<h1>You are still still logged in</h1>';
 }
 

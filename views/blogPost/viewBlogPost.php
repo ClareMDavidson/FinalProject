@@ -42,10 +42,10 @@
 <div class="sharethis-inline-share-buttons" id="socialmedia"></div>
 <br />
 <hr id="style1">
-<p><b>Comments:</b></p> 
+<h6 style="text-align:left;font-size:1.5vw;text-indent:2%;">Comments:</h6><br>
 <?php
     foreach($blogPost->getComments() as $comment) { ?>
-        <h5 align="left"><b><?php echo $comment->getUsername(); ?></b></h5>
+        <h5 align="left" style="text-indent:5%"><b><?php echo $comment->getUsername(); ?></b></h5>
         <p><?php echo $comment->getContent(); ?></p>
         <div class="row"><div class="col-sm-10"></div><div class="col-sm-2"><a href="index.php?controller=comment&action=alterScore&score=plus&commentPostID=<?php echo $comment->getCommentPostID();?>&blogPostID=<?php echo $blogPost->getID();?>" name="comment<?php echo $comment->getCommentPostID();?>"><img name="plus" style="height: 20px; width: auto;" src="views/images/uparrow.png"></a></div></div><p></p>
         <div class="row"><div class="col-sm-10"></div><div class="col-sm-2" style="float: right"><p><span id="score"><?php echo $comment->getScore();?></span></p></div></div>

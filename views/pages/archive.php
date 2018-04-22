@@ -8,7 +8,7 @@ if (empty($posts)) {
     </div>
     <?php } else {
     ?>
-    <div class="archiveTitle"><h2 style="padding-top: 4px"><b><?php echo $_GET['month'] ?></b></h2></div>
+    <div class="archiveTitle"><h2 style="font-size:2.5vw;padding-top: 4px"><?php echo $_GET['month'] ?></h2></div>
     <br>
     <div class="blogPost">
         <?php foreach ($archivePost->getArchivePost() as $posts) { ?>
