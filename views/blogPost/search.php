@@ -13,7 +13,7 @@
             ?><br>
             <div class="blogLink">
                 <a href="index.php?controller=blogPost&action=view&blogPostID=<?php echo $posts->getID();?>">
-                    View full post
+                    <h6><u>View full post</u></h6>
                 </a>
             </div>
         </p>

@@ -1,21 +1,23 @@
-<form action="">
 
+<br>
  <h1>Please leave your message and I'll get back to you as soon as I can- thanks!</h1>
-    
-  First name:<br>
+  <div class="form-label-group loginStyle"> 
+      <form action="">
+          <h6 style="text-align:left"> First name:</h6>
   <input type="text" name="firstname" value="">
   <br>
-  Last name:<br>
+  <h6 style="text-align:left">Last name:</h6>
   <input type="text" name="lastname" value="">
   <br><br>
-  Phone number:<br>
+  <h6 style="text-align:left">Phone number:</h6>
   <input type="Number" name="Phone number" value="">
   <br><br>
-  Message:<br>
+  <h6 style="text-align:left">Message:</h6>
   <input type="text" name="MSG" value="">
   
   <input type="submit" value="Submit">
-</form> 
+</form>
+  </div>
 <br>
  <h4>To find Us</h4>
 
