@@ -37,8 +37,20 @@ class PagesController {
     public function logout() {
         session_unset();
         session_destroy();
-        require_once ('views/pages/logout.php');
+        //the line below forces it to go round the loop again, which does the redirect properly.
+        if(isset($_GET['done']) && $_GET['done']=='true'){
+            require_once ('views/pages/logout.php');
+        }else{
+            ?>
+                <script>
+                    window.location.replace("index.php?controller=pages&action=logout&done=true");
+                </script>
+            <?php
+        }
     }
+//    public function loggedout() {
+//        require_once ('views/pages/logout.php');
+//    }
     
     public function contactUs() {
         require_once('views/pages/contactUs.php');
