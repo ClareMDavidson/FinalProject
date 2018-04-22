@@ -3,6 +3,8 @@
     private $blogPostID;
     private $title;
     private $content;
+    private $userID;
+    private $user;
     private $date;
     private $liked;
     private $loved;
@@ -33,6 +35,7 @@
                 $this->title = $results['title'];
                 $this->content = $results['content'];
                 $this->date = $results['datePosted'];
+                $this->userID = $results['userID'];
                 $this->liked = $results['liked'];
                 $this->loved = $results['loved'];
                 $this->wowed = $results['wowed'];
@@ -60,11 +63,12 @@
             $this->keywords = $keywords;
             $this->date = date('Y-m-d');
             $pdo = DB::getInstance();
-            $stmt = $pdo->prepare("INSERT INTO blogPost(title, content, datePosted) VALUES (:title, :content, :date)");
+            $stmt = $pdo->prepare("INSERT INTO blogPost(title, content, datePosted, userID) VALUES (:title, :content, :date, :userID)");
             $stmt->execute(array(
                 "title" => $this->title,
                 "content" => $this->content,
                 "date" => $this->date,
+                "userID" => $_SESSION['userID']
                 //"keywords" => $this->keywords
                 ));
             $this->blogPostID = $pdo->lastInsertId();
@@ -176,5 +180,13 @@
     public function getAngers()
         {
         return $this->angered;
+        } 
+    public function getUser()
+        {
+        require_once("models/user.php");
+        if(!isset($this->user)){
+            $this->user=new user($this->userID);
+        } //only load the object when you need to use it, but once it's loaded reuse it.
+        return $this->user;
         } 
   }

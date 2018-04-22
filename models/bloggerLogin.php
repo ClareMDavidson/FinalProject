@@ -9,11 +9,12 @@ class bloggerLogin {
             $filteredPassword = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_SPECIAL_CHARS);
 
             $pdo = DB::getInstance();
-            $stmt = $pdo->prepare("SELECT * FROM users WHERE username='$filteredUsername' AND password ='$filteredPassword'");
-            $stmt->execute();
+            $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :filteredUsername AND password = :filteredPassword");
+            $stmt->execute(["filteredUsername"=>$filteredUsername, "filteredPassword"=>$filteredPassword]);
             $row = $stmt->fetch();
             if ($row) {
                 $_SESSION["username"] = $filteredUsername;
+                $_SESSION["userID"] = $row["users_id"];
                 require_once('views/blogPost/createBlogPost.php');
             } else {
                 require_once ('views/pages/login.php');
