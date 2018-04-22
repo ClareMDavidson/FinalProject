@@ -2,7 +2,7 @@
 <h1> About </h1>
 <br>
 <h4>
-    My name is Nessa and a few months ago I moved into a gorgeous new flat in a very cool converted old building.
+    My name is Sarah and a few months ago I moved into a gorgeous new flat in a very cool converted old building.
     I was over the moon, but since then all I've had is trouble.
     <br><br>
     I discovered that the place was actually an old asylum with a really murky history and I'm not sure that everything that happened here is staying in the past.
