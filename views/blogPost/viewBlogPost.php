@@ -1,6 +1,6 @@
 <div class="blogPost">
     <h2><?php echo $blogPost->getTitle();?></h2>
-    <p><b><?php echo "Posted on: ". $blogPost->getDate(); ?></b></p>
+    <p><b>Posted by <?php echo $blogPost->getUser()->getName(); ?> on <?php echo $blogPost->getDate(); ?></b></p>
     <p><?php echo $blogPost->getContent(); ?></p>
     <p id="keywords">Keywords:
     <?php

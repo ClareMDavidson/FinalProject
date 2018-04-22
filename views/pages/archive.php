@@ -14,8 +14,8 @@ if (empty($posts)) {
         <?php foreach ($archivePost->getArchivePost() as $posts) { ?>
         
         <div class="blogLink"><h2><a href="index.php?controller=blogPost&action=view&blogPostID=<?php echo $posts->getID();?>"><?php echo $posts->getTitle();?></a></h2></div>                            
+            <p><b>Posted by <?php echo $posts->getUser()->getName(); ?> on <?php echo $posts->getDate(); ?></b></p>
             <p><?php echo $posts->getContent(); ?></p>
-            <p><b><?php echo "Posted on: " . $posts->getDate(); ?></b></p>
             <p id="keywords"><?php echo "Keywords: ";
                 //echo implode(', ', $blogPost->getKeywords());
                 $loop=0;
