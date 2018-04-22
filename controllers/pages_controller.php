@@ -1,5 +1,6 @@
 <?php
 include 'models/bloggerLogin.php';
+include 'models/register.php';
 
 class PagesController {
    
@@ -8,6 +9,7 @@ class PagesController {
       require_once('models/blogPost.php');
       require_once('models/comment.php');
       $multiPost = new MultiPostDisplay();
+      $multiPost->generateLastThreePosts();
       require_once('views/pages/home.php');
     }
     
@@ -41,6 +43,14 @@ class PagesController {
     public function contactUs() {
         require_once('views/pages/contactUs.php');
     }
-
-
+    
+    public function register() {
+        if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+            require_once('views/pages/registration.php');            
+        }
+        else {
+            Register::registerContributor();   
+        
+        }
+    }
 }
