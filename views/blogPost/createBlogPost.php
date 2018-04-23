@@ -20,15 +20,18 @@
     </div>
     <button class="loginButton form-control hvr-fade" type="submit" name="Submit">Submit</button>
 </form>
-<form id="file-form" action="index.php?controller=image&action=save" method="POST" enctype="multipart/form-data">
-    <div "form-label-group">
-        <label for="file">Image Uploader (jpeg, png or gif files only):</label>
-        <input class="form-control" type="hidden" name="MAX_FILE_SIZE" value="10000000" />
-        <input type="file" id="file-select" name="photos[]">
-    </div>
-    <button type="submit" name="Submit" id="upload-button" class="loginButton form-control hvr-fade">Upload</button>
-</form>
-<p id="imageCode"></p>
+<center>
+    <form id="file-form" action="index.php?controller=image&action=save" method="POST" enctype="multipart/form-data">
+        <div "form-label-group">
+            <label for="file">Upload Image (jpeg, png or gif files only):</label>
+            <br />
+            <input class="form-control" type="hidden" name="MAX_FILE_SIZE" value="10000000" />
+            <input type="file" id="file-select" name="photos[]">
+        </div>
+        <button type="submit" name="Submit" id="upload-button" class="markup">Upload</button>
+    </form>
+    <p id="imageCode"></p>
+</center>
 
 <script>
     var form = document.getElementById('file-form');

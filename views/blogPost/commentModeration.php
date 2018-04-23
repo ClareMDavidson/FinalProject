@@ -3,7 +3,7 @@
         if (count($commentList->getCommentList())>0){ ?>
 
                 <?php foreach($commentList->getCommentList() as $comment) { ?>
-                <h3>Comment left on: <?php echo $comment->getPost()->getTitle();?></h3>
+                <h2>Comment left on: <?php echo $comment->getPost()->getTitle();?></h2>
                 <h5><b><?php echo $comment->getUsername(); ?></b></h5>
                 <p><?php echo $comment->getContent(); ?></p>
                 <h5><?php echo $comment->getTimeCommented() . " | " . $comment->getDateCommented(); ?></h5>
