@@ -127,10 +127,12 @@
             <div id="sideWidgetBar">
             <a href="https://twitter.com/skyGITwomen/" target="_blank"><img style="height: 50px; width: 50px;" src="views/images/twitterIcon.png" alt="placeholder social media icon" hspace="5"/></a>
             <a href="https://www.youtube.com/channel/UC_cjkT0TLAhi2ZoBShBs6qw/featured?view_as=subscriber/" target="_blank"><img style="height: 50px; width: 50px;" src="views/images/youtubeIcon.png" alt="placeholder social media icon" hspace="5"/></a>
-            <a href="https://www.instagram.com/skygitwomen/" target="_blank"><img style="height: 50px; width: 50px;" src="views/images/instagramIcon.png" alt="placeholder social media icon" hspace="5"/></a>
+            <a href="https://www.instagram.com/sarahs__87/" target="_blank"><img style="height: 50px; width: 50px;" src="views/images/instagramIcon.png" alt="placeholder social media icon" hspace="5"/></a>
             <a href="https://www.facebook.com/skygitwomen.sky.7/" target="_blank"><img style="height: 50px; width: 50px;" src="views/images/Facebook.png.png" alt="placeholder social media icon" hspace="5"/></a>
             <br><br><br>
-             <h3>Twitter feed might go here</h3>
+             <!-- LightWidget WIDGET --><script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/c80acf2e3ca0546083f9cea5704acbb0.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border-radius:5px;overflow:hidden;"></iframe>
+
+
             <br /><br /><br />
             <h2>Search</h2>
             <?php require_once('views/sidebar/wordCloud.php');?>    
