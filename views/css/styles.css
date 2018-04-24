@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Special+Elite|Montserrat|Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Special+Elite|Montserrat|Open+Sans:400,400i,800);
 
 .navbar{
         color: #F8FFF4;
@@ -101,6 +101,15 @@ p{
         font-family: 'Open Sans', sans-serif;
         color: #2E2C2F;
 }
+b {
+    font-weight: 800;
+}
+
+i {
+    font-weight: 400i;
+}
+
+
 body{
         font-size: 1vw;
         font-family: 'Open Sans', sans-serif;
@@ -275,7 +284,6 @@ div.blogPost img {
     padding-top: 2%;
     padding-bottom: 2%;
 }
-
 
 #commentForm {
     padding: 20px;
