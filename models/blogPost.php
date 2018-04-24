@@ -44,7 +44,7 @@
                 
                 $stmt = $pdo->prepare("SELECT commentPostID from comment
                     WHERE blogPostID = :blogPostID AND approved = 'Yes'
-                    ORDER BY commentPostID DESC;");
+                    ORDER BY commentScore DESC, commentPostID Desc;");
                 $stmt->execute (["blogPostID"=>$blogPostID]);
                 while ($results = $stmt->fetch()){
                    $comment = new Comment($results ['commentPostID']);
@@ -133,7 +133,7 @@
             $content = preg_replace('/\((.*?)\)\[(.*?)\]/', '<a href="\1" target="_blank">\2</a>', $content);
             $content = preg_replace('/\*\*(.*?)\*\*/', '<b>\1</b>', $content);
             $content = preg_replace('/\*(.*?)\*/', '<i>\1</i>', $content);
-            $content = preg_replace('/\>\>(.*?)\>/', '<center>\1</center>', $content);
+            $content = preg_replace('/\~(.*?)\~/', '<center>\1</center>', $content);
             return $content;
         }
     
