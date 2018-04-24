@@ -69,4 +69,8 @@ class PagesController {
     public function about(){
         require_once('views/pages/about.php');
     }
+    
+    public function thankyou(){
+        require_once ('views/pages/thankyou.php'); 
+    }    
 }

@@ -26,7 +26,7 @@
 // Add an entry for each new controller and its actions
 
 
-$controllers = array('pages' => ['home', 'error', 'login', 'logout', 'contactUs', 'archive', 'register','about'],
+$controllers = array('pages' => ['home', 'error', 'login', 'logout', 'contactUs', 'archive', 'register','about', 'thankyou'],
                     'blogPost' => ['write', 'save', 'view'],
                     'comment'=>['writeComment', 'saveComment', 'viewComment', 'alterScore', 'moderate', 'viewUnapproved'],
                     'image' => ['upload', 'save'],

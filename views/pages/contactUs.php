@@ -1,8 +1,8 @@
 
 <br>
- <h1>Please leave your message and I'll get back to you as soon as I can- thanks!</h1>
+ <h1>Please leave a message - thanks!</h1>
   <div class="form-label-group loginStyle"> 
-      <form action="">
+      <form action="index.php?controller=pages&action=thankyou" method="POST">
         <h6 style="text-align:left"> First name:</h6>
         <input type="text" name="firstname" value="">
         <br>
@@ -10,12 +10,12 @@
         <input type="text" name="lastname" value="">
         <br><br>
         <h6 style="text-align:left">Email Address:</h6>
-        <input type="Number" name="email" value="">
+        <input type="text" name="email" value="">
         <br><br>
         <h6 style="text-align:left">Message:</h6>
-        <textarea name="Content" id="Content" placeholder="Write your message for Sarah here." class="form-control" required /></textarea>
+        <textarea name="Content" id="Content" placeholder="Write your message here." class="form-control" required /></textarea>
         <button type="submit" value="Submit" class="loginButton form-control hvr-fade">Submit</button>
-</form>
+    </form>
   </div>
 <br>
  <!--<h4>To find Us</h4>
